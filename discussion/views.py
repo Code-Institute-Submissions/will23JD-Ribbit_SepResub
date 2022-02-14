@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views import generic
+from .models import discussion
 
-# Create your views here.
+class DiscussionList(generic.ListView):
+    model = discussion
+    template_name = 'index.html'
+    paginate_by = 6
