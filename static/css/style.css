@@ -1,0 +1,22 @@
+/* Navbar */
+
+.bg-aqua {
+    background-color: #469d89;
+}
+
+/* footer */
+
+footer {
+    color: white;
+    height: 70px;
+    font-size: large;
+}
+
+.f-d {
+    margin-top: 12px;
+}
+
+.f-d a {
+    padding: 5px;
+    color: black;
+}
