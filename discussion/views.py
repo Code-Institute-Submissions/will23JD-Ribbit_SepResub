@@ -5,4 +5,4 @@ from .models import discussion
 class DiscussionList(generic.ListView):
     model = discussion
     template_name = 'index.html'
-    paginate_by = 6
+    paginate_by = 9
