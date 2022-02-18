@@ -7,27 +7,27 @@
 
         <div class="col-12">
             <div class="row">
-                <h2>{{ discussion.title }}</h2>
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in discussion.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="">
-                                {% else %}
-                                <img class="card-img-top" src="{{ post.featured_image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ discussion.author }}</p>
-                                </div>
-                            </div>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ discussion.created_on}} <i class="far fa-heart"></i>
-                                {{ discussion.number_of_likes }}
-                            </p>
-                            <p class="card-body">
-                                {{ discussion.content | safe }}
-                            </p>
+                <div class="card-body">
+                    <div class="image-container">
+                        <h2>{{ discussion.title }}</h2>
+                        <div class="d-none d-sm-block col-sm-6 masthead-image">
+                            <!-- The featured image URL goes in the src attribute -->
+                            {% if "placeholder" in post.featured_image.url %}
+                            <img src="" width="100%">
+                            {% else %}
+                            <img src=" {{ discussion.featured_image.url }}" width="100%">
+                            {% endif %}
                         </div>
+                        <p class="author">Author: {{ discussion.author }}</p>
+                    </div>
+                    <hr />
+                    <p class="card-text text-muted h6">{{ discussion.created_on}} <i class="far fa-heart"></i>
+                        {{ discussion.number_of_likes }}
+                    </p>
+                    <p>
+                        {{ discussion.content | safe }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

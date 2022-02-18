@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.views import generic
 from .models import discussion
 
@@ -11,3 +12,9 @@ class DiscussionList(generic.ListView):
 class DiscussionOpen(generic.DetailView):
     model = discussion
     template_name = 'discussion_open.html'
+
+
+class AddDiscussion(generic.CreateView):
+    model = discussion
+    template_name = 'add_discussion.html'
+    fields = ('title', 'slug', 'author', 'featured_image', 'excerpt', 'content')

@@ -4,5 +4,7 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.DiscussionList.as_view(), name='home'),
-    path('<slug:slug>/', views.DiscussionOpen.as_view(), name='discussionOpen'),
+    path('add_discussion/', views.AddDiscussion.as_view(), name='addDis'),
+    path('<slug:slug>/', views.DiscussionOpen.as_view(), name='disOpen'),
+
 ]
