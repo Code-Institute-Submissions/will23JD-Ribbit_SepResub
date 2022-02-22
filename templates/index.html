@@ -42,7 +42,7 @@
         <div class="d-none d-lg-block col-lg-4 mt-3">
             <div class="row">
                 <h2>Your Discussions</h2>
-                <!--  -->
+                {% for discussion in discussion_list %}
                 <div>
                     <div class="card mb-3">
                         <div class="card-body">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-                <!--  -->
+                {% endfor %}
             </div>
         </div>
     </div>
