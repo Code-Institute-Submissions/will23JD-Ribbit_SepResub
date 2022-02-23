@@ -8,6 +8,7 @@
     <div class="row align-items-center">
         <div class="col">
             <form method="POST" enctype="multipart/form-data">
+                <p>Author : {{ user.username }} </p>
                 {% csrf_token %}
                 {{ form.as_p }}
                 <div class="d-grid gap-2 col-6 mx-auto">
@@ -17,5 +18,12 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    let author = "{{ user.id }}";
+    document.getElementById("author").value = author;
+    
+</script>
 
 {% endblock content %}
