@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
     <title>Ribbit</title>
 
 </head>
-<body>
+<body class="d-flex flex-column h-100">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-aqua">
         <div class="container-fluid">
@@ -31,9 +31,6 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'addDis' %}">Add Discussion</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Catagories
@@ -45,6 +42,9 @@
                 </ul>
               </li>
               {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'addDis' %}">Add Discussion</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
               </li>
@@ -60,29 +60,27 @@
           </div>
         </div>
       </nav>
-    
-    {% block content %}
-    <!-- Content Goes here -->
-    {% endblock content %}
-    <footer class="bg-aqua">
-      <div class="container f-d">
-        <div class="row">
-          <div class="col-8 mx-auto" style="width: 300px;">Follow us: 
-              <a href="http://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facbook page (opens in a new tab)"><i class="fab fa-facebook"></i></a>
 
-              <a href="http://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)"><i class="fab fa-twitter-square"></i></a>
+    <main class="flex-shrink-0">
+      {% block content %}
+      <!-- Content Goes here -->
+      {% endblock content %}
+    </main>
+    <!-- Footer -->
 
-              <a href="http://youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube page (opens in a new tab)"><i class="fab fa-youtube"></i></a>
+    <footer class="footer mt-auto py-3 bg-aqua">
+        <div class="m-0 text-center f-d">Follow us: 
+            <a href="http://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facbook page (opens in a new tab)"><i class="fab fa-facebook"></i></a>
 
-              <a href="http://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram"></i></a>
+            <a href="http://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)"><i class="fab fa-twitter-square"></i></a>
 
-              <a href="http://whatsapp.com" target="_blank" rel="noopener" aria-label="Visit our WhatsApp page (opens in a new tab)"><i class="fab fa-whatsapp"></i></a>
-          </div>
-          <div class="col-4 s-text">
-            Copyright &copy; <script>document.write(new Date().getFullYear())</script> Will23JD All Rights Reserved
-          </div>
-        </div>
+            <a href="http://youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube page (opens in a new tab)"><i class="fab fa-youtube"></i></a>
+
+            <a href="http://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram"></i></a>
+
+            <a href="http://whatsapp.com" target="_blank" rel="noopener" aria-label="Visit our WhatsApp page (opens in a new tab)"><i class="fab fa-whatsapp"></i></a>
       </div>
-    </footer>
+      <p class="m-0 text-center s-text">Copyright &copy; <script>document.write(new Date().getFullYear())</script> Will23JD All Rights Reserved</p>
+  </footer>
 </body>
 </html>

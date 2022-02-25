@@ -4,17 +4,11 @@
     background-color: #469d89;
 }
 
+.dark-bg {
+    background-color: #445261;
+}
+
 /* footer */
-
-footer {
-    color: white;
-    height: 50px;
-    font-size: large;
-}
-
-.f-d {
-    margin-top: 12px;
-}
 
 .f-d a {
     padding: 5px;
