@@ -13,8 +13,23 @@
         </div>
         <div class="col-12 col-lg-4">
             <div class="text-muted h6">Author: {{ discussion.author }} | {{ discussion.created_on}}
-                <span class="tex-secondary"><i class="far fa-heart"></i></i></span>
-                <span class="tex-secondary">{{ discussion.number_of_likes }}</span>
+                {% if user.is_authenticated %}
+                            <form action="{% url 'disLike' discussion.pk %}" method="POST" class="d-inline">
+                                {% csrf_token %}
+                                {% if liked %}
+                                    <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                {% else %}
+                                    <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="tex-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <span class="tex-secondary">{{ discussion.number_of_likes }}</span>
             </div>
             <div class="card">
                 <div class="card-body">
