@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
-from django.views import generic
+from django.views import generic, View
 from .models import discussion
 from .forms import DiscussionForm
 

@@ -24,7 +24,7 @@
                                     <p>Author: {{ discussion.author }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'disOpen' discussion.slug %}" class="post-link">
+                            <a href="{% url 'disOpen' discussion.pk %}" class="post-link">
                                 <h2 class="card-title">{{ discussion.title }}</h2>
                                 <p class="card-text">{{ discussion.excerpt }}</p>
                             </a>

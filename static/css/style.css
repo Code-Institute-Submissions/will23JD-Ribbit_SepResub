@@ -1,5 +1,10 @@
 /* Navbar */
 
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Colors */
 .bg-aqua {
     background-color: #469d89;
 }
@@ -19,4 +24,20 @@
 
 .s-text {
     font-size: .875em;
+}
+
+/* Likes */
+
+
+.btn-like {
+    color: #469d89;
+    border: none;
+    background: transparent;
+    transition: transform .2s; /* Animation */
+}
+
+.btn-like:hover {
+    transform: scale(1.5);
+    background: transparent;
+    border: none;
 }

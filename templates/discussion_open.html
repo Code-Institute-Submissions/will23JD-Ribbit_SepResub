@@ -12,9 +12,10 @@
             {% endif %}
         </div>
         <div class="col-12 col-lg-4">
-            <p class="text-muted h6">Author: {{ discussion.author }} | {{ discussion.created_on}}<i class="far fa-heart"></i>
-                {{ discussion.number_of_likes }}
-            </p>
+            <div class="text-muted h6">Author: {{ discussion.author }} | {{ discussion.created_on}}
+                <span class="tex-secondary"><i class="far fa-heart"></i></i></span>
+                <span class="tex-secondary">{{ discussion.number_of_likes }}</span>
+            </div>
             <div class="card">
                 <div class="card-body">
                     {{ discussion.content | safe }}
