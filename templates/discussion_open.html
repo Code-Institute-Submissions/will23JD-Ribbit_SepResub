@@ -12,7 +12,7 @@
             {% endif %}
         </div>
         <div class="col-12 col-lg-4">
-            <div class="text-muted h6">Author: {{ discussion.author }} | {{ discussion.created_on}}
+            <div class="text-muted h6">Author: {{ discussion.author }} | {{ discussion.created_on}} | {{ discussion.categorys }}
                 {% if user.is_authenticated %}
                             <form action="{% url 'disLike' discussion.pk %}" method="POST" class="d-inline">
                                 {% csrf_token %}

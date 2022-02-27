@@ -22,6 +22,7 @@
                                 {% endif %}
                                 <div>
                                     <p>Author: {{ discussion.author }}</p>
+                                    <p>{{ discussion.categorys }}</p> 
                                 </div>
                             </div>
                             <a href="{% url 'disOpen' discussion.pk %}" class="post-link">
