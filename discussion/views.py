@@ -11,6 +11,7 @@ class DiscussionList(generic.ListView):
     model = discussion
     template_name = 'index.html'
     paginate_by = 9
+    ordering = ['-created_on']
 
     
 class DiscussionOpen(generic.DetailView):
