@@ -39,6 +39,7 @@
         </div>
         <div class="col-12">
             <h2>Comments</h2>
+            <h4><a href="{% url 'comments' discussion.pk %}"><i class="far fa-comment"></i></a></h4>
             {% for comment in discussion.comments.all %}
             <div class="card mb-2">
                 <div class="card-body">

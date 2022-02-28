@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Add Comment</h1>
+    <div class="row align-items-center">
+        <div class="col">
+            <form method="POST">
+                <p>Name : {{ user.username }} </p>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    let name = "{{ user.username }}";
+    document.getElementById("name").value = name;
+    
+</script>
+
+{% endblock content %}

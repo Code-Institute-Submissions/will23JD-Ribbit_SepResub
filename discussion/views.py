@@ -2,8 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from django.core.paginator import Paginator
-from .models import discussion, Categorys
-from .forms import DiscussionForm
+from django.urls import reverse_lazy
+from .models import discussion, Categorys, Comment
+from .forms import DiscussionForm, CommentForm
 
 
 class DiscussionList(generic.ListView):
@@ -24,6 +25,7 @@ class DiscussionOpen(generic.DetailView):
         if likes_connected.likes.filter(id=self.request.user.id).exists():
             liked = True
         data['liked'] = liked
+
         return data
 
 
@@ -61,3 +63,16 @@ class AddDiscussion(generic.CreateView):
     form_class = DiscussionForm
     template_name = 'add_discussion.html'
     # fields = ('title', 'slug', 'author', 'featured_image', 'excerpt', 'content')
+
+
+class Comments(generic.CreateView):
+    model = Comment
+    form_class = CommentForm
+    template_name = 'comments.html'
+    
+    def form_valid(self, form):
+        form.instance.discussion_id = self.kwargs['pk']
+        return super().form_valid(form)
+    
+    success_url = reverse_lazy('home')
+

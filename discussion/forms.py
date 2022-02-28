@@ -1,11 +1,9 @@
 from django import forms
-from .models import discussion, Categorys
+from .models import discussion, Categorys, Comment
 
 
 cats = Categorys.objects.all().values_list('name', 'name')
-
 cats_list = []
-
 for cat in cats:
     cats_list.append(cat)
 
@@ -21,4 +19,14 @@ class DiscussionForm(forms.ModelForm):
             'featured_image': forms.FileInput(attrs={'class': 'form-control'}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('name', 'body')
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'type': 'hidden', 'value': '', 'id': 'name'}),
+            'body': forms.Textarea(attrs={'class': 'form-control'}),
         }
