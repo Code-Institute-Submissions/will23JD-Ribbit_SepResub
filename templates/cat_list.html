@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- view categories -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                <h2>Categories</h2>
+                {% for cat in cat_list %}
+                    <div class="col-md-3">
+                        <a href="{% url 'catsview' cat %}">
+                            <div class="card mb-3">
+                                <img class="card-img-top"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                <div class="text-center">
+                                    <p>Category: {{ cat }}</p> 
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

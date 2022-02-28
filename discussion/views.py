@@ -27,6 +27,12 @@ class DiscussionOpen(generic.DetailView):
         return data
 
 
+def DiscussionCatsList(request):
+
+    cat_list = Categorys.objects.all()
+    return render(request, 'cat_list.html', {'cat_list': cat_list})
+
+
 def DiscussionCats(request, cats):
 
     discussion_cat = discussion.objects.filter(categorys=cats)
