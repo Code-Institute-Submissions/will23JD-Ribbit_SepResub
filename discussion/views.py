@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.views import generic, View
-from .models import discussion
+from django.core.paginator import Paginator
+from .models import discussion, Categorys
 from .forms import DiscussionForm
 
 
@@ -10,12 +11,12 @@ class DiscussionList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 9
 
-
+    
 class DiscussionOpen(generic.DetailView):
     model = discussion
     template_name = 'discussion_open.html'
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, *args, **kwargs):
         data = super().get_context_data(**kwargs)
 
         likes_connected = get_object_or_404(discussion, id=self.kwargs['pk'])
@@ -24,6 +25,17 @@ class DiscussionOpen(generic.DetailView):
             liked = True
         data['liked'] = liked
         return data
+
+
+def DiscussionCats(request, cats):
+
+    discussion_cat = discussion.objects.filter(categorys=cats)
+    paginator = Paginator(discussion_cat, 12)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'view_by_cats.html', {'cats': cats, 
+    'discussion_cat': discussion_cat, 'page_obj': page_obj})
 
 
 def DiscussionLike(request, pk):

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Discussions by category -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                <h2>{{ cats }}</h2>
+                {% for discussion in page_obj %}
+                <div class="col-md-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in discussion.featured_image.url %}
+                                <img class="card-img-top"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                {% else %}
+                                <img class="card-img-top" src="{{ discussion.featured_image.url }}">
+                                {% endif %}
+                                <div>
+                                    <p>Author: {{ discussion.author }}</p>
+                                    <p>Category: {{ discussion.categorys }}</p> 
+                                </div>
+                            </div>
+                            <a href="{% url 'disOpen' discussion.pk %}" class="post-link">
+                                <h2 class="card-title">{{ discussion.title }}</h2>
+                                <p class="card-text">{{ discussion.excerpt }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ discussion.created_on}} <i class="far fa-heart"></i>
+                                {{ discussion.number_of_likes }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+  <nav aria-label="Page navigation conatiner"></nav>
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+    {% endif %}
+  </ul>
+  </nav>
+</div>
+{% endblock content %}

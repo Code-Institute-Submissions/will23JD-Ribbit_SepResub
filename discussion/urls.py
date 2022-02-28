@@ -7,5 +7,6 @@ urlpatterns = [
     path('add_discussion/', views.AddDiscussion.as_view(), name='addDis'),
     path('discussion/<int:pk>/', views.DiscussionOpen.as_view(), name='disOpen'),
     path('like/<int:pk>/', views.DiscussionLike, name='disLike'),
+    path('category/<str:cats>/', views.DiscussionCats, name='catsview'),
 
 ]
