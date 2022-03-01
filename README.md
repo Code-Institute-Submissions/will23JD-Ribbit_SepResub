@@ -1,108 +1,128 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Ribbit online Discussion forum
 
-Welcome will23JD,
+[View the live project here.]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+![View of website on different screen sizes.]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Experience (UX)
 
-`python3 -m http.server`
+### As a site user:
+* I want to be able to ready discussion and comments
+* I want to be able to filter by a catagory
 
-A blue button should appear to click: _Make Public_,
+### As a registered site user:
+* I want to be able to create my own discussions
+* I want to be able to comment on other discussions
+*
+*
 
-Another blue button should appear to click: _Open Browser_.
+### As the site admin in need to:
+* Be able to manage all discussions and comments
+* Be able to update discussions, comments and categories
+* Be able to add futher categories
+* Be able to delete discussions, comments, categories and users
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+* ## Design 
 
-Another blue button should appear to click: _Open Browser_.
+    * ### Imagery
+        * As images are able to be uploaded, by registered users, 
+        there is no theme, or stlye.  
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    * ### Colour Scheme
+        * I used a mix of green throughout the page to stick with the theme
+        of a frog(Hence the name Ribbit)
 
-To log into the Heroku toolbelt CLI:
+        ![Color scheme](documentation/screenshots/colorPallet.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    * ### Typography 
+        * 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* ## Wireframes 
 
-------
 
-## Release History
+## Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+###  Features Left to Implement
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Testing
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Web browers
+* When testing in different browers I wanted to make sure all feature and style look and functioned the same. This is important so that the user can have the same expeerience on any different brower. I tested that the page opens and works in browsers: Chrome, Edge, Firefox,and Bing. To test the different browsers I used my computer to test Chrome, Edge, Firefox, and bing
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Responsiveness
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Validator Testing
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+* HTML
+    * No errors were found when passing through the [official W3C validator](https://validator.w3.org/#validate_by_input).
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+    ![HTML validator]()
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+* CSS
+    * No errors were found when passing through the [official (Jigsaw) validator](https://jigsaw.w3.org/css-validator/#validate_by_input).
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+    ![CSS validator]()
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Javascript
+    * No errors were found when passing through the [JSHint validator](https://jshint.com/).
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+    ![Javascript validator]()
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* Accessibility
+    * I used lighthouse to confirm the site accessibility was 100%.
 
-------
+    ![Lighthouse results]()
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+### Fixed Bugs 
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+### Unfixed Bugs
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Technologies Used
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Languages Used
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://www.python.org/)
 
-**So….?**
+### Framework, Libraries and Programs used
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* [Balsamiq](https://balsamiq.com/wireframes/):
+    * Used to create wireframes in the desgin process.
+* [Google Fonts](https://fonts.google.com/):
+    * 
+* [Font Awesome](https://fontawesome.com/):
+    * Used for the social media links in the footer.
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Deployment
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Heroku App
 
-**Anything more?**
+### Forking the GitHub Repository
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Forking the repository allows us to have a copy of the original repository to view and make changes on our GitHub account with affecting to original work. Forking a repository can be done with the following steps.
 
----
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+2. At the top right of the repository above settings, find and click the fork button. 
+3. You will now have a copy in your account.
 
-Happy coding!
+## Credits
+
+### Code 
+* 
+* [W3Schools](https://www.w3schools.com/) use for help with audio sounds.
+
+### Acknowledgements
+
+* My Mentor for feedback throughout the project.
+* Friends and family for help with testing and feedback
