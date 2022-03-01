@@ -33,11 +33,27 @@ body {
     object-fit: cover;
 }
 
+/* links */
+
 .link {
     color: #14746f;
+    text-decoration: none;
 }
 .link:hover {
     color: #67b99a;
+    text-decoration: underline;
+}
+
+/* buttons */
+
+.btn-cus {
+    background-color: #248277;
+    border-color: #14746f; 
+}
+
+.btn-cus:hover {
+    background-color: #67b99a;
+    border-color: #14746f; 
 }
 
 /* Likes */
