@@ -5,12 +5,23 @@
 }
 
 /* Colors */
+
 .bg-aqua {
     background-color: #248277;
 }
 
 body {
     background-color: #99E2b4;
+}
+
+/* Text stlye */
+
+p, body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Raleway', sans-serif;
 }
 
 /* footer */
