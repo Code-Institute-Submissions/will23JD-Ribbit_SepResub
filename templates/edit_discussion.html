@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% if user.id == discussion.author.id %}
+
 {% load cloudinary %}
 <div class="container mb-2">
     <h1>Edit Discussion</h1>
@@ -25,5 +27,9 @@
     document.getElementById("author").value = author;
     
 </script>
+
+{% else %}
+This isn't your discussion you can't edit it!
+{% endif %}
 
 {% endblock content %}
