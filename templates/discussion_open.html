@@ -12,7 +12,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item link" href="{% url 'editDis' discussion.pk %}">Edit</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item link" href="{% url 'deleteDis' discussion.pk %}">Delete</a></li>
                     </ul>
                 </div>
                 {% endif %}

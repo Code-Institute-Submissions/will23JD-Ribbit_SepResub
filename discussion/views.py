@@ -82,3 +82,10 @@ class Edit(generic.UpdateView):
     model = discussion
     form_class = DiscussionForm
     template_name = 'edit_discussion.html'
+
+
+class Delete(generic.DeleteView):
+    model = discussion
+    template_name = "delete_discussion.html"
+    success_url = reverse_lazy('home')
+
