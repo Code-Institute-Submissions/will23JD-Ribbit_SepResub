@@ -75,13 +75,19 @@ class Comments(generic.CreateView):
         form.instance.discussion_id = self.kwargs['pk']
         return super().form_valid(form)
     
-    success_url = reverse_lazy('home')
+    def get_success_url(self):
+
+        return reverse_lazy('disOpen', kwargs={'pk': self.kwargs['pk']})
 
 
 class Edit(generic.UpdateView):
     model = discussion
     form_class = DiscussionForm
     template_name = 'edit_discussion.html'
+
+    def get_success_url(self):
+
+        return reverse_lazy('disOpen', kwargs={'pk': self.kwargs['pk']})
 
 
 class Delete(generic.DeleteView):
