@@ -10,5 +10,6 @@ urlpatterns = [
     path('category/<str:cats>/', views.DiscussionCats, name='catsview'),
     path('discussion/<int:pk>/comments/', views.Comments.as_view(), name='comments'),
     path('category_list/', views.DiscussionCatsList, name='listCat'),
+    path('discussion/edit/<int:pk>/', views.Edit.as_view(), name='editDis'),
 
 ]

@@ -15,7 +15,7 @@
                         <div class="image-container">
                             {% if "placeholder" in discussion.featured_image.url %}
                             <img class="card-img-top img"
-                                src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
                             {% else %}
                             <img class="card-img-top img" src="{{ discussion.featured_image.url }}">
                             {% endif %}
@@ -30,8 +30,22 @@
                                 <p class="card-text">{{ discussion.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ discussion.created_on}} <i class="far fa-heart"></i>
-                                {{ discussion.number_of_likes }}</p>
+                            <div class="hstack gap-3">
+                                <p class="card-text text-muted h6">{{ discussion.created_on}} <i class="far fa-heart"></i>
+                                    {{ discussion.number_of_likes }}
+                                    {% if user.id == discussion.author.id %}
+                                </p>
+                                <div class="dropdown ms-auto">
+                                    <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-h fs-4"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item link" href="{% url 'editDis' discussion.pk %}">Edit</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    </ul>
+                                </div>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -51,7 +65,7 @@
                                     <div class="image-container">
                                         {% if "placeholder" in discussion.featured_image.url %}
                                         <img class="card-img-top img"
-                                            src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                            src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
                                         {% else %}
                                         <img class="card-img-top img" src="{{ discussion.featured_image.url }}">
                                         {% endif %}

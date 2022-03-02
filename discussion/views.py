@@ -77,3 +77,8 @@ class Comments(generic.CreateView):
     
     success_url = reverse_lazy('home')
 
+
+class Edit(generic.UpdateView):
+    model = discussion
+    form_class = DiscussionForm
+    template_name = 'edit_discussion.html'

@@ -38,12 +38,33 @@
         ![Color scheme](documentation/screenshots/colorPallet.png)
 
     * ### Typography 
-        * 
+        * For my body and p elements, I used: [Montserrat](https://fonts.google.com/specimen/Montserrat)
+        with a weight of 500. As this is a clean and easie to read font
+
+        * For the head emelents, I used: [Raleway](https://fonts.google.com/specimen/Raleway) with a 
+        weight of 400 as this again was a clean font.
 
 * ## Wireframes 
 
 
 ## Features
+
+### Nav and Footer:
+
+#### Nav
+* On the Nav bar you are able to go back to the home page, view by category and if you are signed in you can:
+    * Create a new discussion and logout.
+* If you aren't singed in you can login or sign up for an account.
+
+### index.html:
+* from the home page you are able to view all of the recent posts
+
+#### Footer
+* The footer doesn't change based on if you are signed or not, and contains links to social platforms and copyright.
+
+### Home page
+* On the home page you are greated with a list of new discussion to get in to.
+* With larger screen
 
 
 

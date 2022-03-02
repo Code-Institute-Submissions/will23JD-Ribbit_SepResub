@@ -3,7 +3,20 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <h2>{{ discussion.title }}</h2>
+        <div class="hstack gap-3">
+            <h2>{{ discussion.title }}</h2>
+                {% if user.id == discussion.author.id %}
+                <div class="dropdown ms-auto">
+                    <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-ellipsis-h fs-1"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item link" href="{% url 'editDis' discussion.pk %}">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                    </ul>
+                </div>
+                {% endif %}
+          </div> 
         <div class="d-none d-lg-block col-8">
             {% if "placeholder" in discussion.featured_image.url %}
             <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
@@ -39,7 +52,7 @@
         </div>
         <div class="col-12">
             <h2>Comments</h2>
-            <h4><a href="{% url 'comments' discussion.pk %}"><i class="far fa-comment"></i></a></h4>
+            <h4><a href="{% url 'comments' discussion.pk %}"><i class="far fa-comment link"></i></a></h4>
             {% for comment in discussion.comments.all %}
             <div class="card mb-2">
                 <div class="card-body">
