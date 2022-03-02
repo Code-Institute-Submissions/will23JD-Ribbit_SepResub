@@ -27,6 +27,8 @@
                     <div class="modal-body">
                         <form method="POST">
                             {% csrf_token %}
+                            <input type="hidden" id="previous_page" name="previous_page" 
+                            value="/previous/page/url">
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <input class="btn btn-primary btn-cus" type="submit" value="Delete">
                             </div>
@@ -45,5 +47,9 @@
 This isn't your comment you can't delete it! 
 {% endif %}
 
+<script>
+    prev = document.getElementById("previous_page");
+    prev.value = document.referrer;
+</script>
 
 {% endblock content %}
