@@ -95,3 +95,9 @@ class EditComment(generic.UpdateView):
     form_class = CommentForm
     template_name = 'edit_comment.html'
     success_url = reverse_lazy('home')
+
+
+class DeleteComment(generic.DeleteView):
+    model = Comment
+    template_name = "delete_comment.html"
+    success_url = reverse_lazy('home')
