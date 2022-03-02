@@ -31,10 +31,11 @@
                             </a>
                             <hr />
                             <div class="hstack gap-3">
-                                <p class="card-text text-muted h6">{{ discussion.created_on}} <i class="far fa-heart"></i>
-                                    {{ discussion.number_of_likes }}
-                                    {% if user.id == discussion.author.id %}
+                                <p class="card-text text-muted h6">{{ discussion.created_on}} 
+                                    <i class="far fa-heart"></i>{{ discussion.number_of_likes }}
+                                    <i class="far fa-arrow-alt-circle-down"></i>{{ discussion.number_of_down_vote }}
                                 </p>
+                                {% if user.id == discussion.author.id %}
                                 <div class="dropdown ms-auto">
                                     <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fas fa-ellipsis-h fs-4"></i>

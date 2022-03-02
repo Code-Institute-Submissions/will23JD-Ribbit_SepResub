@@ -13,6 +13,7 @@ class discussion(models.Model):
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='discussion_likes', blank=True)
+    down_vote = models.ManyToManyField(User, related_name='discussion_downvote', blank=True)
     categorys = models.CharField(max_length=100, default='coding')
 
 
@@ -21,6 +22,9 @@ class discussion(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def number_of_down_vote(self):
+        return self.down_vote.count()
 
     def get_absolute_url(self):
         return reverse('home')

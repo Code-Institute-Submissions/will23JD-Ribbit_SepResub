@@ -27,6 +27,12 @@ class DiscussionOpen(generic.DetailView):
             liked = True
         data['liked'] = liked
 
+        downvote_connected = get_object_or_404(discussion, id=self.kwargs['pk'])
+        downVoted = False
+        if downvote_connected.down_vote.filter(id=self.request.user.id).exists():
+            downVoted = True
+        data['downVoted'] = downVoted
+
         return data
 
 
@@ -58,6 +64,20 @@ def DiscussionLike(request, pk):
         liked = True
 
     return HttpResponseRedirect(reverse('disOpen', args=[str(pk)]))
+
+
+def DiscussionDownVote(request, pk):
+    downVote = get_object_or_404(discussion, id=request.POST.get('discussion_id'))
+    downVoted = False
+    if downVote.down_vote.filter(id=request.user.id).exists():
+        downVote.down_vote.remove(request.user)
+        downVoted = False
+    else:
+        downVote.down_vote.add(request.user)
+        downVoted = True
+
+    return HttpResponseRedirect(reverse('disOpen', args=[str(pk)]))
+
 
 class AddDiscussion(generic.CreateView):
     model = discussion
