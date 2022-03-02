@@ -12,5 +12,6 @@ urlpatterns = [
     path('category_list/', views.DiscussionCatsList, name='listCat'),
     path('discussion/edit/<int:pk>/', views.Edit.as_view(), name='editDis'),
     path('discussion/delete/<int:pk>/', views.Delete.as_view(), name='deleteDis'),
+    path('discussion/edit/<int:pk>/comments/', views.EditComment.as_view(), name='editCom'),
 
 ]

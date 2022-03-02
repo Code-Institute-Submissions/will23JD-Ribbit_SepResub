@@ -56,7 +56,24 @@
             {% for comment in discussion.comments.all %}
             <div class="card mb-2">
                 <div class="card-body">
-                    <strong>{{ comment.name }}</strong> | {{ comment.created_on }}
+                    <div class="row">
+                        <div class="hstack gap-3">
+                            <h6>
+                                <strong>{{ comment.name }}</strong> | {{ comment.created_on }}
+                            </h6>
+                            {% if user.username == comment.name %}
+                            <div class="dropdown">
+                                <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-h fs-4"></i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item link" href="{% url 'editCom' comment.pk %}">Edit</a></li>
+                                    <li><a class="dropdown-item link" href="#">Delete</a></li>
+                                </ul>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
                     <br/>
                     {{ comment.body }}
                 </div>

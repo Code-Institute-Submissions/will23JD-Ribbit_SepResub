@@ -28,7 +28,7 @@ class discussion(models.Model):
 
 class Comment(models.Model):
     discussion = models.ForeignKey(discussion, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=80)
+    name = models.CharField(User, max_length=80)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
@@ -41,7 +41,7 @@ class Comment(models.Model):
 
 class Categorys(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    
+
     def __str__(self):
         return self.name
 
