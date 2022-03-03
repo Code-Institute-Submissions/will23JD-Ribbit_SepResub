@@ -16,7 +16,7 @@
                         <div class="image-container">
                             {% if "placeholder" in discussion.featured_image.url %}
                             <img class="card-img-top img"
-                                src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
+                                src="https://res.cloudinary.com/will23jd/image/upload/v1646298991/Science_Pelophylax_nigromaculatus_wafqfd.jpg">
                             {% else %}
                             <img class="card-img-top img" src="{{ discussion.featured_image.url }}">
                             {% endif %}
@@ -63,12 +63,10 @@
             <div class="pagination">
                 <span class="step-links">
                     {% if page_obj.has_previous %}
-                        <a class="btn btn-primary btn-cus btn-sm" href="?page=1">&laquo; first</a>
                         <a class="btn btn-primary btn-cus btn-sm" href="?page={{ page_obj.previous_page_number }}">previous</a>
                     {% endif %}
                     {% if page_obj.has_next %}
                         <a class="btn btn-primary btn-cus btn-sm" href="?page={{ page_obj.next_page_number }}">next</a>
-                        <a class="btn btn-primary btn-cus btn-sm" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
                     {% endif %}
                 </span>
             </div>

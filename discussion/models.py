@@ -45,6 +45,7 @@ class Comment(models.Model):
 
 class Categorys(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    featured_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return self.name
