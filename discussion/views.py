@@ -10,7 +10,14 @@ from .forms import DiscussionForm, CommentForm
 class DiscussionList(generic.ListView):
     model = discussion
     template_name = 'index.html'
-    paginate_by = 9
+    paginate_by = 12
+    ordering = ['-created_on']
+
+
+class YourDiscussions(generic.ListView):
+    model = discussion
+    template_name = 'your_discussions.html'
+    paginate_by = 12
     ordering = ['-created_on']
 
     
