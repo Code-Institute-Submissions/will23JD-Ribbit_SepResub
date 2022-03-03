@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import discussion, Categorys, Comment
+from .models import Discussion, Categorys, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(discussion)
+@admin.register(Discussion)
 class PostAdmin(SummernoteModelAdmin):
 
     list_filter = ('created_on', 'author')
