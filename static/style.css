@@ -111,6 +111,3 @@ h1, h2, h3, h4 {
 #id_email {
     display: none;
 }
-lable [for = "id_email"] {
-    display: none;
-}

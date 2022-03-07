@@ -97,9 +97,9 @@ class Comments(generic.CreateView):
     model = Comment
     form_class = CommentForm
     template_name = 'comments.html'
-    
+
     def form_valid(self, form):
-        form.instance.discussion_id = self.kwargs['pk']
+        form.instance.Discussion_id = self.kwargs['pk']
         return super().form_valid(form)
     
     def get_success_url(self):
