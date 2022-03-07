@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
 {% load cloudinary %}
 <div class="container mb-2">
     <h1>Add Discussion</h1>
@@ -18,7 +19,18 @@
         </div>
     </div>
 </div>
-
+{% else %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="mt-4">
+                <h3>You have to be <a class="link" href="{% url 'account_login' %}">Logged</a> in to add a Discussion!</h3>
+                <h4>If you don't have an account you can <a class="link" href="{% url 'account_signup' %}">sing up here!</a></h4>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 <script>
 
     let author = "{{ user.id }}";
