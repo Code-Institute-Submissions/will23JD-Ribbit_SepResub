@@ -29,8 +29,10 @@
                                 <p class="card-text">{{ discussion.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ discussion.created_on}} <i class="far fa-heart"></i>
-                                {{ discussion.number_of_likes }}</p>
+                            <p class="card-text text-muted h6">{{ discussion.created_on}} 
+                                <i class="far fa-arrow-alt-circle-up"></i>{{ discussion.number_of_likes }}
+                                <i class="far fa-arrow-alt-circle-down"></i>{{ discussion.number_of_down_vote }}
+                            </p>
                         </div>
                     </div>
                 </div>
