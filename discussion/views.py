@@ -134,5 +134,9 @@ class EditComment(generic.UpdateView):
 
 class DeleteComment(generic.DeleteView):
     model = Comment
-    template_name = "delete_comment.html"
+    template_name = 'delete_comment.html'
     success_url = reverse_lazy('home')
+
+
+def page_404(request, exception):
+    return render(request, 'page_404.html')
