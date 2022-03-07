@@ -61,27 +61,25 @@ def DiscussionCats(request, cats):
 
 
 def DiscussionLike(request, pk):
+    downVote = get_object_or_404(Discussion, id=request.POST.get('discussion_id'))
     dislike = get_object_or_404(Discussion, id=request.POST.get('discussion_id'))
-    liked = False
     if dislike.likes.filter(id=request.user.id).exists():
         dislike.likes.remove(request.user)
-        liked = False
     else:
+        downVote.down_vote.remove(request.user)
         dislike.likes.add(request.user)
-        liked = True
 
     return HttpResponseRedirect(reverse('disOpen', args=[str(pk)]))
 
 
 def DiscussionDownVote(request, pk):
+    dislike = get_object_or_404(Discussion, id=request.POST.get('discussion_id'))
     downVote = get_object_or_404(Discussion, id=request.POST.get('discussion_id'))
-    downVoted = False
     if downVote.down_vote.filter(id=request.user.id).exists():
         downVote.down_vote.remove(request.user)
-        downVoted = False
     else:
+        dislike.likes.remove(request.user)
         downVote.down_vote.add(request.user)
-        downVoted = True
 
     return HttpResponseRedirect(reverse('disOpen', args=[str(pk)]))
 
