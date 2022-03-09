@@ -14,22 +14,22 @@
                     <div class="card mb-4">
                         <div class="image-container">
                             {% if "placeholder" in discussion.featured_image.url %}
-                            <img class="card-img-top img"
+                            <img class="card-img-top img" aria-label="placeholder standard image(frog)"
                                 src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
                             {% else %}
-                            <img class="card-img-top img" src="{{ discussion.featured_image.url }}">
+                            <img class="card-img-top img" aria-label="Discussion featured image" src="{{ discussion.featured_image.url }}">
                             {% endif %}
                         </div>
                         <div class="card-body">
-                            <div>
-                                <p>Author: {{ discussion.author }} <br>
-                                Category: {{ discussion.category }}</p> 
-                            </div>
                             <a href="{% url 'disOpen' discussion.pk %}" class="link">
-                                <h4 class="card-title">{{ discussion.title }}</h4>
+                                <h3 class="card-title">{{ discussion.title }}</h3>
                                 <p class="card-text">{{ discussion.excerpt }}</p>
                             </a>
                             <hr />
+                            <div>
+                                <p class="s-text">Author: {{ discussion.author }} <br>
+                                Category: {{ discussion.category | title}}</p> 
+                            </div>
                             <div class="hstack gap-3">
                                 <p class="card-text text-muted h6">{{ discussion.created_on}} 
                                     <i class="far fa-arrow-alt-circle-up"></i>{{ discussion.number_of_likes }}

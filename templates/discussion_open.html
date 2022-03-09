@@ -19,13 +19,13 @@
         </div> 
         <div class="col-md-6 offset-md-3">
             {% if "placeholder" in discussion.featured_image.url %}
-            <img class="open_img" src="https://res.cloudinary.com/will23jd/image/upload/v1646298991/Science_Pelophylax_nigromaculatus_wafqfd.jpg" width="100%">
+            <img class="open_img" aria-label="Discussion Standard image(frog)" src="https://res.cloudinary.com/will23jd/image/upload/v1646298991/Science_Pelophylax_nigromaculatus_wafqfd.jpg" width="100%">
             {% else %}
-            <img class="open_img" src=" {{ discussion.featured_image.url }}" width="100%">
+            <img class="open_img" aria-label="Discussion featured image" src=" {{ discussion.featured_image.url }}" width="100%">
             {% endif %}
         </div>
         <div class="col-12">
-            <div class="text-muted h6">Author: {{ discussion.author }} | {{ discussion.created_on}} | {{ discussion.category }}
+            <div class="text-muted">Author: {{ discussion.author }} | {{ discussion.created_on}} | {{ discussion.category }}
                 {% if user.is_authenticated %}
                     <form action="{% url 'disLike' discussion.pk %}" method="POST" class="d-inline">
                         {% csrf_token %}
@@ -40,7 +40,7 @@
                         {% endif %}
                     </form>
                 {% else %}
-                    <span class="tex-secondary"><i class="far fa-heart"></i></span>
+                    <span class="tex-secondary"><i class="far fa-arrow-alt-circle-up"></i></span>
                 {% endif %}
                 <span class="tex-secondary">{{ discussion.number_of_likes }}</span>
                 {% if user.is_authenticated %}
@@ -68,16 +68,16 @@
             </div>
         </div>
         <div class="col-12">
-            <h2>Comments  <a href="{% url 'comments' discussion.pk %}"><i class="far fa-comment link"></i></a></h2>
+            <h2>Comments<a aria-label="Comment on the post" href="{% url 'comments' discussion.pk %}"><i class="far fa-comment link"></i></a></h2>
             <div class="scroll">
             {% for comment in discussion.comments.all %}
             <div class="card mb-2">
                 <div class="card-body">
                     <div class="row">
                         <div class="hstack gap-3">
-                            <h6>
+                            <p>
                                 <strong>{{ comment.name }}</strong> | {{ comment.created_on }}
-                            </h6>
+                            </p>
                             {% if user.username == comment.name %}
                             <div class="dropdown">
                                 <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">

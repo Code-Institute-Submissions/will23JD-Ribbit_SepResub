@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
-from django.views import generic, View
+from django.views import generic
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from .models import Discussion, Categorys, Comment
@@ -20,7 +20,7 @@ class YourDiscussions(generic.ListView):
     paginate_by = 12
     ordering = ['-created_on']
 
-    
+
 class DiscussionOpen(generic.DetailView):
     model = Discussion
     template_name = 'discussion_open.html'
@@ -34,7 +34,8 @@ class DiscussionOpen(generic.DetailView):
             liked = True
         data['liked'] = liked
 
-        downvote_connected = get_object_or_404(Discussion, id=self.kwargs['pk'])
+        downvote_connected = get_object_or_404(
+            Discussion, id=self.kwargs['pk'])
         downVoted = False
         if downvote_connected.down_vote.filter(id=self.request.user.id).exists():
             downVoted = True
@@ -56,13 +57,16 @@ def DiscussionCats(request, cats):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'view_by_cats.html', {'cats': cats,
-    'discussion_cat': discussion_cat, 'page_obj': page_obj})
+    return render(request, 'view_by_cats.html',
+            {'cats': cats, 'discussion_cat': discussion_cat,
+                'page_obj': page_obj})
 
 
 def DiscussionLike(request, pk):
-    downVote = get_object_or_404(Discussion, id=request.POST.get('discussion_id'))
-    dislike = get_object_or_404(Discussion, id=request.POST.get('discussion_id'))
+    downVote = get_object_or_404(
+        Discussion, id=request.POST.get('discussion_id'))
+    dislike = get_object_or_404(
+        Discussion, id=request.POST.get('discussion_id'))
     if dislike.likes.filter(id=request.user.id).exists():
         dislike.likes.remove(request.user)
     else:
@@ -73,8 +77,10 @@ def DiscussionLike(request, pk):
 
 
 def DiscussionDownVote(request, pk):
-    dislike = get_object_or_404(Discussion, id=request.POST.get('discussion_id'))
-    downVote = get_object_or_404(Discussion, id=request.POST.get('discussion_id'))
+    dislike = get_object_or_404(
+        Discussion, id=request.POST.get('discussion_id'))
+    downVote = get_object_or_404(
+        Discussion, id=request.POST.get('discussion_id'))
     if downVote.down_vote.filter(id=request.user.id).exists():
         downVote.down_vote.remove(request.user)
     else:
@@ -88,7 +94,7 @@ class AddDiscussion(generic.CreateView):
     model = Discussion
     form_class = DiscussionForm
     template_name = 'add_discussion.html'
-    # fields = ('title', 'slug', 'author', 'featured_image', 'excerpt', 'content')
+    # fields = ('title', 'slug', 'featured_image', 'excerpt', 'content')
 
 
 class Comments(generic.CreateView):
@@ -99,7 +105,7 @@ class Comments(generic.CreateView):
     def form_valid(self, form):
         form.instance.Discussion_id = self.kwargs['pk']
         return super().form_valid(form)
-    
+
     def get_success_url(self):
 
         return reverse_lazy('disOpen', kwargs={'pk': self.kwargs['pk']})

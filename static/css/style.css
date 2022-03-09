@@ -7,7 +7,7 @@
 /* Colors */
 
 .bg-aqua {
-    background-color: #248277;
+    background-color: #14746f;
 }
 
 body {
@@ -35,6 +35,10 @@ h1, h2, h3, h4 {
 
 .s-text {
     font-size: .875em;
+}
+
+.off-white {
+    color: #f6e0ff!important;
 }
 
 /* images */
