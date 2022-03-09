@@ -1,6 +1,6 @@
 # Ribbit online Discussion forum
 
-[View the live project here.]()
+[View the live project here.](https://ribbit-2022.herokuapp.com/)
 
 
 
@@ -15,8 +15,9 @@
 ### As a registered site user:
 * I want to be able to create my own discussions
 * I want to be able to comment on other discussions
-*
-*
+* I want to be able to edit my discussions
+* I want to be able to delete my discussions
+* I want to be able to edit or delete my comments
 
 ### As the site admin in need to:
 * Be able to manage all discussions and comments
@@ -29,7 +30,8 @@
 
     * ### Imagery
         * As images are able to be uploaded, by registered users, 
-        there is no theme, or stlye.  
+        there is no theme, or stlye however if a user doesn't choose an images\
+        a basic frog is displayed to fill the space.
 
     * ### Colour Scheme
         * I used a mix of green throughout the page to stick with the theme
@@ -49,22 +51,43 @@
 
 ## Features
 
-### Nav and Footer:
+### Navigation:
 
 #### Nav
+![Image of the nav bar](documentation/screenshots/Navbar.png)
 * On the Nav bar you are able to go back to the home page, view by category and if you are signed in you can:
     * Create a new discussion and logout.
 * If you aren't singed in you can login or sign up for an account.
 
-### index.html:
-* from the home page you are able to view all of the recent posts
-
 #### Footer
+![Image of the footer](documentation/screenshots/footer.png)
 * The footer doesn't change based on if you are signed or not, and contains links to social platforms and copyright.
 
-### Home page
-* On the home page you are greated with a list of new discussion to get in to.
-* With larger screen
+
+### Home page (index.html):
+
+#### Discussion cards
+![Image of a discussion card](documentation/screenshots/card.png)
+* The card is general information about the discussion, which contains:
+    * featured image
+    * title and exserpt
+    * auhtor and category
+    * date of creation and up and down votes
+* The aim of the card is do give users an idea about the discussion before they click
+on it.
+
+#### Pagination
+![Image of a pagination](documentation/screenshots/card.png)
+* The page paginate a 12 cards to stop user having to scroll for a long time.
+
+### Opened discussion:
+![Image of a an open discussion](documentation/screenshots/card.png)
+* At the top of the page is the title of the discussion
+* Following this is is the feature image, if the user doesn't us a picture nothing will be displayed.
+* After this is the generall information about the post like: author, creation, up and down votes.
+* Next is the body/main area for the discussion.
+* Last is the comment section, where you can read other peoples comments and comment your self.
+
 
 
 
