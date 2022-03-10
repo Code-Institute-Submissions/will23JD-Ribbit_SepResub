@@ -80,13 +80,34 @@ on it.
 ![Image of a pagination](documentation/screenshots/card.png)
 * The page paginate a 12 cards to stop user having to scroll for a long time.
 
-### Opened discussion:
-![Image of a an open discussion](documentation/screenshots/card.png)
+### Opened discussion
+![Image of a an open discussion](documentation/screenshots/open-discussion.png)
 * At the top of the page is the title of the discussion
 * Following this is is the feature image, if the user doesn't us a picture nothing will be displayed.
 * After this is the generall information about the post like: author, creation, up and down votes.
 * Next is the body/main area for the discussion.
 * Last is the comment section, where you can read other peoples comments and comment your self.
+
+### Your discussions
+* Having a separate page for all your discussion makes it easier to find, edit and delete 
+them, this is important because a user doesn't want to have to scroll though other 
+discussion in order to get the theirs.
+
+### Editing and deleting your comments and discussions
+![Image of edit and delete](documentation/screenshots/edit-delete.png)
+![Image of editing a discussion](documentation/screenshots/delete.png)
+![Image of deleting a discussion](documentation/screenshots/edit.png)
+* Being able to edit or delete a discussion or comment is important as a user 
+may need to update a discussion to contain new/ correct information.
+
+### Adding a discussion
+![Image of adding a discussion](documentation/screenshots/add-discussion.png)
+* As a Login user If want to make a discussion I should have a clean simple way to do so.
+thats why adding a discussion is right on the nav bar and, open a simple form for users to create there discussion about what ever they want.
+
+### login/out and sign up
+![Image of signing up](documentation/screenshots/sign-up.png)
+* The sign up and and other pages have a simple clean look in order to keep it easy to get logged in or sign up.
 
 
 
