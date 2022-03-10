@@ -141,7 +141,10 @@ class EditComment(generic.UpdateView):
 class DeleteComment(generic.DeleteView):
     model = Comment
     template_name = 'delete_comment.html'
-    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        self.success_url = self.request.POST.get('previous_page')
+
 
 
 def page_404(request, exception):
