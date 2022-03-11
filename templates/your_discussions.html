@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %}My Discussions{% endblock %}
 {% block content %}
 
 <div class="container-fluid">
@@ -8,7 +8,7 @@
         <!--  Your Discussions -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                <h2>Your Discussions</h2>
+                <h2>My Discussions</h2>
                 {% for discussion in discussion_list %}
                 {% if user.id == discussion.author.id %}
                 <div class="col-lg-3 col-md-6">

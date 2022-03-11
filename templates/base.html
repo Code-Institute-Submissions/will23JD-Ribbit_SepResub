@@ -19,7 +19,7 @@
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <title>Ribbit</title>
+    <title>{% block title%}Ribbit{% endblock %}</title>
 
 </head>
 <body class="d-flex flex-column h-100">
@@ -40,7 +40,7 @@
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link off-white" href="{% url 'yourDis' %}">Your Discussions</a>
+                <a class="nav-link off-white" href="{% url 'yourDis' %}">My Discussions</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link off-white" href="{% url 'addDis' %}">Add Discussion</a>
