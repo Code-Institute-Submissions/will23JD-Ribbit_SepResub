@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.views import generic
 from django.core.paginator import Paginator
@@ -121,11 +121,10 @@ class Edit(generic.UpdateView):
         return reverse_lazy('disOpen', kwargs={'pk': self.kwargs['pk']})
 
 
-class Delete(generic.DeleteView):
-    model = Discussion
-    template_name = "delete_discussion.html"
-    success_url = reverse_lazy('home')
-
+def Delete(request, pk):
+    discussion = Discussion.objects.get(pk=pk)
+    discussion.delete()
+    return redirect('home')
 
 class EditComment(generic.UpdateView):
     model = Comment
@@ -138,12 +137,18 @@ class EditComment(generic.UpdateView):
         return super().form_valid(form)
 
 
-class DeleteComment(generic.DeleteView):
-    model = Comment
-    template_name = 'delete_comment.html'
+# class DeleteComment(generic.DeleteView):
+#     model = Comment
+#     template_name = 'delete_comment.html'
 
-    def form_valid(self, form):
-        self.success_url = self.request.POST.get('previous_page')
+#     success_url = reverse_lazy('home')
+
+def DeleteComment(request, pk):
+    comment = Comment.objects.get(pk=pk)
+    comment.delete()
+    return redirect('home')
+
+
 
 
 

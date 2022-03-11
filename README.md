@@ -110,8 +110,6 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 * The sign up and and other pages have a simple clean look in order to keep it easy to get logged in or sign up.
 
 
-
-
 ###  Features Left to Implement
 
 ## Testing
@@ -120,7 +118,7 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 * When testing in different browers I wanted to make sure all feature and style look and functioned the same. This is important so that the user can have the same expeerience on any different brower. I tested that the page opens and works in browsers: Chrome, Edge, Firefox,and Bing. To test the different browsers I used my computer to test Chrome, Edge, Firefox, and bing
 
 ### Responsiveness
-
+* By using bootstrap I was able to make sure, the content was view able on all screen sizes with out stretching or overflow.
 
 ### Validator Testing
 
@@ -160,13 +158,21 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 * [Python](https://www.python.org/)
 
 ### Framework, Libraries and Programs used
+* [Django](https://www.djangoproject.com/)
+
+* [Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+
+* [Gunicorn](https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/gunicorn/)
+* [Cloudinary](https://cloudinary.com/home-3722)
+
+* [Summernote](https://summernote.org/)
 
 * [Balsamiq](https://balsamiq.com/wireframes/):
-    * Used to create wireframes in the desgin process.
+
 * [Google Fonts](https://fonts.google.com/):
-    * 
+ 
 * [Font Awesome](https://fontawesome.com/):
-    * Used for the social media links in the footer.
+
 
 
 ## Deployment
