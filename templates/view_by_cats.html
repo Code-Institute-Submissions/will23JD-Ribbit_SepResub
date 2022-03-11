@@ -9,16 +9,15 @@
             <div class="row">
                 <h2>{{ cats | title}}</h2>
                 {% for discussion in page_obj %}
-                <div class="col-lg-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="card mb-4">
                         <div class="image-container">
-                            <div class="image-container">
-                                {% if "placeholder" in discussion.featured_image.url %}
-                                <img class="card-img-top img" aria-label="placeholder standard image"
-                                    src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
-                                {% else %}
-                                <img class="card-img-top img" aria-label="Discussion featured image" src="{{ discussion.featured_image.url }}">
-                                {% endif %}
+                            {% if "placeholder" in discussion.featured_image.url %}
+                            <img class="card-img-top img" aria-label="placeholder standard image"
+                                src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
+                            {% else %}
+                            <img class="card-img-top img" aria-label="Discussion featured image" src="{{ discussion.featured_image.url }}">
+                            {% endif %}
                         </div>
                         <div class="card-body">
                             <a href="{% url 'disOpen' discussion.pk %}" class="link">
@@ -61,10 +60,10 @@
   <nav aria-label="Page navigation conatiner"></nav>
   <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
-    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    <li><a class="btn btn-success btn-cus btn-sm" href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Prev </a></li>
     {% endif %}
     {% if page_obj.has_next %}
-    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+    <li><a class="btn btn-success btn-cus btn-sm" href="?page={{ page_obj.next_page_number }}" class="page-link"> Next &raquo;</a></li>
 
     {% endif %}
   </ul>
