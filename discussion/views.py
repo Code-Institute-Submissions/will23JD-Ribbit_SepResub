@@ -126,6 +126,7 @@ def Delete(request, pk):
     discussion.delete()
     return redirect('home')
 
+
 class EditComment(generic.UpdateView):
     model = Comment
     form_class = CommentForm
@@ -137,19 +138,10 @@ class EditComment(generic.UpdateView):
         return super().form_valid(form)
 
 
-# class DeleteComment(generic.DeleteView):
-#     model = Comment
-#     template_name = 'delete_comment.html'
-
-#     success_url = reverse_lazy('home')
-
 def DeleteComment(request, pk):
     comment = Comment.objects.get(pk=pk)
     comment.delete()
     return redirect('home')
-
-
-
 
 
 def page_404(request, exception):
