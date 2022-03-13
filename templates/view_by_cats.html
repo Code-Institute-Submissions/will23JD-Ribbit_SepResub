@@ -16,7 +16,8 @@
                             <img class="card-img-top img" aria-label="placeholder standard image"
                                 src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
                             {% else %}
-                            <img class="card-img-top img" aria-label="Discussion featured image" src="{{ discussion.featured_image.url }}">
+                            <img class="card-img-top img" aria-label="Discussion featured image"
+                                src="{{ discussion.featured_image.url }}">
                             {% endif %}
                         </div>
                         <div class="card-body">
@@ -27,40 +28,49 @@
                             <hr />
                             <div>
                                 <p class="s-text">Author: {{ discussion.author }} <br>
-                                Category: {{ discussion.category | title}}</p> 
+                                    Category: {{ discussion.category | title}}</p>
                             </div>
                             <div class="hstack gap-3">
-                                <p class="card-text text-muted h6">{{ discussion.created_on}} 
+                                <p class="card-text text-muted h6">{{ discussion.created_on}}
                                     <i class="far fa-arrow-alt-circle-up"></i>{{ discussion.number_of_likes }}
                                     <i class="far fa-arrow-alt-circle-down"></i>{{ discussion.number_of_down_vote }}
                                 </p>
                                 {% if user.id == discussion.author.id %}
                                 <div class="dropdown ms-auto">
-                                    <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a class="link" href="#" role="button" id="dropdownMenuLink"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fas fa-ellipsis-h fs-4"></i>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item link" href="{% url 'editDis' discussion.pk %}">Edit</a></li>
+                                        <li><a class="dropdown-item link"
+                                                href="{% url 'editDis' discussion.pk %}">Edit</a></li>
                                         <!-- Modal button -->
-                                        <button type="button" class="dropdown-item link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <button type="button" class="dropdown-item link" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdrop">
                                             Delete
                                         </button>
                                     </ul>
                                     <!-- Modal -->
-                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">Are you sure you want to Delete: {{ discussion.title }}</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Are you sure you
+                                                        want to Delete: {{ discussion.title }}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="d-grid gap-2 col-6 mx-auto">
-                                                        <a class="btn btn-success btn-cus" href="{% url 'deleteDis' discussion.id %}">Delete</a>
+                                                        <a class="btn btn-success btn-cus"
+                                                            href="{% url 'deleteDis' discussion.id %}">Delete</a>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Go Back</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -92,16 +102,18 @@
         </div>
     </div>
 </div>
-  <nav aria-label="Page navigation conatiner"></nav>
-  <ul class="pagination justify-content-center">
+<nav aria-label="Page navigation conatiner"></nav>
+<ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
-    <li><a class="btn btn-success btn-cus btn-sm" href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; Prev </a></li>
+    <li><a class="btn btn-success btn-cus btn-sm" href="?page={{ page_obj.previous_page_number }}"
+            class="page-link">&laquo; Prev </a></li>
     {% endif %}
     {% if page_obj.has_next %}
-    <li><a class="btn btn-success btn-cus btn-sm" href="?page={{ page_obj.next_page_number }}" class="page-link"> Next &raquo;</a></li>
+    <li><a class="btn btn-success btn-cus btn-sm" href="?page={{ page_obj.next_page_number }}" class="page-link"> Next
+            &raquo;</a></li>
 
     {% endif %}
-  </ul>
-  </nav>
+</ul>
+</nav>
 </div>
 {% endblock content %}

@@ -7,24 +7,28 @@
             <h2>{{ discussion.title }}</h2>
             {% if user.id == discussion.author.id %}
             <div class="dropdown ms-auto">
-                <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     <i class="fas fa-ellipsis-h fs-1"></i>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <li><a class="dropdown-item link" href="{% url 'editDis' discussion.pk %}">Edit</a></li>
                     <!-- Modal button -->
-                    <button type="button" class="dropdown-item link" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="dropdown-item link" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
                         Delete
                     </button>
                 </ul>
             </div>
             <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Are you sure you want to Delete: {{ discussion.title }}</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h5 class="modal-title" id="staticBackdropLabel">Are you sure you want to Delete:
+                                {{ discussion.title }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="d-grid gap-2 col-6 mx-auto">
@@ -38,48 +42,50 @@
                 </div>
             </div>
             {% endif %}
-        </div> 
+        </div>
         <div class="col-md-6 offset-md-3">
             {% if "placeholder" in discussion.featured_image.url %}
-            
+
             {% else %}
-            <img class="open_img" aria-label="Discussion featured image" src=" {{ discussion.featured_image.url }}" width="100%">
+            <img class="open_img" aria-label="Discussion featured image" src=" {{ discussion.featured_image.url }}"
+                width="100%">
             {% endif %}
         </div>
         <div class="col-12">
-            <div class="text-muted">Author: {{ discussion.author }} | {{ discussion.created_on}} | {{ discussion.category }}
+            <div class="text-muted">Author: {{ discussion.author }} | {{ discussion.created_on}} |
+                {{ discussion.category }}
                 {% if user.is_authenticated %}
-                    <form action="{% url 'disLike' discussion.pk %}" method="POST" class="d-inline">
-                        {% csrf_token %}
-                        {% if liked %}
-                            <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
-                                <i class="fas fa-arrow-alt-circle-up"></i>
-                            </button>
-                        {% else %}
-                            <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
-                                <i class="far fa-arrow-alt-circle-up"></i>
-                            </button>
-                        {% endif %}
-                    </form>
+                <form action="{% url 'disLike' discussion.pk %}" method="POST" class="d-inline">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
+                        <i class="fas fa-arrow-alt-circle-up"></i>
+                    </button>
+                    {% else %}
+                    <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
+                        <i class="far fa-arrow-alt-circle-up"></i>
+                    </button>
+                    {% endif %}
+                </form>
                 {% else %}
-                    <span class="tex-secondary"><i class="far fa-arrow-alt-circle-up"></i></span>
+                <span class="tex-secondary"><i class="far fa-arrow-alt-circle-up"></i></span>
                 {% endif %}
                 <span class="tex-secondary">{{ discussion.number_of_likes }}</span>
                 {% if user.is_authenticated %}
-                    <form action="{% url 'downvote' discussion.pk %}" method="POST" class="d-inline">
-                        {% csrf_token %}
-                        {% if downVoted %}
-                            <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
-                                <i class="fas fa-arrow-circle-down"></i>
-                            </button>
-                        {% else %}
-                            <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
-                                <i class="far fa-arrow-alt-circle-down"></i>
-                            </button>
-                        {% endif %}
-                    </form>
+                <form action="{% url 'downvote' discussion.pk %}" method="POST" class="d-inline">
+                    {% csrf_token %}
+                    {% if downVoted %}
+                    <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </button>
+                    {% else %}
+                    <button type="submit" name="discussion_id" value="{{ discussion.id }}" class="btn-like">
+                        <i class="far fa-arrow-alt-circle-down"></i>
+                    </button>
+                    {% endif %}
+                </form>
                 {% else %}
-                    <span class="tex-secondary"><i class="far fa-arrow-alt-circle-down"></i></span>
+                <span class="tex-secondary"><i class="far fa-arrow-alt-circle-down"></i></span>
                 {% endif %}
                 <span class="tex-secondary">{{ discussion.number_of_down_vote }}</span>
             </div>
@@ -90,55 +96,66 @@
             </div>
         </div>
         <div class="col-12">
-            <h2>Comments<a aria-label="Comment on the post" href="{% url 'comments' discussion.pk %}"><i class="far fa-comment link"></i></a></h2>
+            <h2>Comments<a aria-label="Comment on the post" href="{% url 'comments' discussion.pk %}"><i
+                        class="far fa-comment link"></i></a></h2>
             <div class="scroll">
-            {% for comment in discussion.comments.all %}
-            <div class="card mb-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="hstack gap-3">
-                            <p>
-                                <strong>{{ comment.name }}</strong> | {{ comment.created_on }}
-                            </p>
-                            {% if user.username == comment.name %}
-                            <div class="dropdown">
-                                <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-ellipsis-h fs-4"></i>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item link" href="{% url 'editCom' comment.pk %}">Edit</a></li>
-                                    <li>
-                                        <!-- trigger modal -->
-                                        <a class="dropdown-item link" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="{% url 'editCom' comment.pk %}">Delete</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Modal -->
-                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Are you sure you want to Delete: {{ comment.body }}</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="d-grid gap-2 col-6 mx-auto">
-                                            <a class="btn btn-success btn-cus" href="{% url 'deleteCom' comment.pk %}">Delete</a>
+                {% for comment in discussion.comments.all %}
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="hstack gap-3">
+                                <p>
+                                    <strong>{{ comment.name }}</strong> | {{ comment.created_on }}
+                                </p>
+                                {% if user.username == comment.name %}
+                                <div class="dropdown">
+                                    <a class="link" href="#" role="button" id="dropdownMenuLink"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-h fs-4"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item link" href="{% url 'editCom' comment.pk %}">Edit</a>
+                                        </li>
+                                        <li>
+                                            <!-- trigger modal -->
+                                            <a class="dropdown-item link" data-bs-toggle="modal"
+                                                data-bs-target="#staticBackdrop"
+                                                href="{% url 'editCom' comment.pk %}">Delete</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">Are you sure you want
+                                                    to Delete: {{ comment.body }}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="d-grid gap-2 col-6 mx-auto">
+                                                    <a class="btn btn-success btn-cus"
+                                                        href="{% url 'deleteCom' comment.pk %}">Delete</a>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Go Back</button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Go Back</button>
-                                    </div>
                                 </div>
-                                </div>
+                                {% endif %}
                             </div>
-                            {% endif %}
                         </div>
+                        {{ comment.body }}
                     </div>
-                    {{ comment.body }}
                 </div>
-            </div>
-	        {% endfor %}
+                {% endfor %}
             </div>
         </div>
     </div>

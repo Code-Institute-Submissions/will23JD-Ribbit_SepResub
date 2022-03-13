@@ -59,6 +59,11 @@
 * Sign in page
     ![Color scheme](documentation/screenshots/signin.png)
 
+### Flow chart
+
+![Flow chart](documentation/screenshots/Flow-chart.png)
+* How the user can use the site if the are signed it or not
+
 ## Features
 
 ### Navigation:
@@ -152,9 +157,8 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
     * No errors were found when passing through the [JSHint validator](http://pep8online.com/).
 
 * Accessibility
-    * I used lighthouse to confirm the site accessibility was 100%.
+    * I used lighthouse to confirm the site accessibility 100% or very close to.
 
-    ![Lighthouse results]()
 
 
 ### Fixed Bugs 
@@ -187,11 +191,13 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 
 * [Summernote](https://summernote.org/)
 
-* [Balsamiq](https://balsamiq.com/wireframes/):
+* [Balsamiq](https://balsamiq.com/wireframes/)
 
-* [Google Fonts](https://fonts.google.com/):
+* [Lucidchart](https://www.lucidchart.com/)
+
+* [Google Fonts](https://fonts.google.com/)
  
-* [Font Awesome](https://fontawesome.com/):
+* [Font Awesome](https://fontawesome.com/)
 
 
 
@@ -277,7 +283,13 @@ Forking the repository allows us to have a copy of the original repository to vi
 ## Credits
 
 ### Code 
-* [W3Schools](https://www.w3schools.com/) use for help with audio sounds.
+* [Codemy](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw)
+    * Help with displaying discussion, custom forms and add discussion page.
+* [CodeInstitue](https://codeinstitute.net/)
+    * Help from think before I blog walk through: Setting django app up, deploy to
+    heroku, cloudinary, basic stlyes and allauth.
+* [Stack overflow](https://stackoverflow.com/)
+    * Help with various bugs
 
 ### Acknowledgements
 

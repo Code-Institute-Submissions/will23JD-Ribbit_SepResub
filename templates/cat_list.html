@@ -9,21 +9,22 @@
             <div class="row">
                 <h2>Categories</h2>
                 {% for cat in cat_list %}
-                    <div class="col-md-3">
-                        <a class="link" href="{% url 'catsview' cat %}">
-                            <div class="card mb-3">
-                                {% if "placeholder" in cat.featured_image.url %}
-                                    <img aria-label="Discussion standard image(frog)" class="card-img-top img"
-                                        src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
-                                {% else %}
-                                    <img aria-label="Category featured image" class="card-img-top img" src="{{ cat.featured_image.url }}">
-                                {% endif %}
-                                <div class="text-center">
-                                    <h4>{{ cat | title }}</h4> 
-                                </div>
+                <div class="col-md-3">
+                    <a class="link" href="{% url 'catsview' cat %}">
+                        <div class="card mb-3">
+                            {% if "placeholder" in cat.featured_image.url %}
+                            <img aria-label="Discussion standard image(frog)" class="card-img-top img"
+                                src="https://media.wired.com/photos/5f245089558da0380aa8e392/master/pass/Science_Pelophylax_nigromaculatus.jpg">
+                            {% else %}
+                            <img aria-label="Category featured image" class="card-img-top img"
+                                src="{{ cat.featured_image.url }}">
+                            {% endif %}
+                            <div class="text-center">
+                                <h4>{{ cat | title }}</h4>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
+                </div>
                 {% endfor %}
             </div>
         </div>
