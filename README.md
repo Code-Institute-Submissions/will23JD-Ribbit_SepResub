@@ -4,7 +4,7 @@
 
 
 
-![View of website on different screen sizes.]()
+![View of website](documentation/screenshots/view.png)
 
 ## User Experience (UX)
 
@@ -48,15 +48,19 @@
 
 * ## Wireframes 
 * Home page
+
     ![Color scheme](documentation/screenshots/home-page.png)
 
 * Opened discussion
+
     ![Color scheme](documentation/screenshots/opened.png)
 
 * View on phones and tables
+
     ![Color scheme](documentation/screenshots/phone.png)
 
 * Sign in page
+
     ![Color scheme](documentation/screenshots/signin.png)
 
 ### Flow chart
@@ -92,7 +96,7 @@
 on it.
 
 #### Pagination
-![Image of a pagination](documentation/screenshots/card.png)
+![Image of a pagination](documentation/screenshots/next-pag.png)![Image of a pagination](documentation/screenshots/pev-pag.png)
 * The page paginate a 12 cards to stop user having to scroll for a long time.
 
 ### Opened discussion
