@@ -2,11 +2,20 @@
 
 [View the live project here.](https://ribbit-2022.herokuapp.com/)
 
-
+Ribbit is a discussion website where users can post and discuss about what ever they want.
+People can find new information, inspiration and people, about anything they like.
 
 ![View of website](documentation/screenshots/view.png)
 
 ## User Experience (UX)
+
+## Project goals:
+
+* To make a fully functioning website where users can discuss about what ever they like.
+* Allow users full control over they discussion, with options to edit and delete.
+* Users can up and down vote discussions and create comments.
+
+## User stories:
 
 ### As a site user:
 * I want to be able to ready discussion and comments
@@ -15,13 +24,14 @@
 ### As a registered site user:
 * I want to be able to create my own discussions
 * I want to be able to comment on other discussions
+* I want to be able to up or down vote a discussion
 * I want to be able to edit my discussions
 * I want to be able to delete my discussions
 * I want to be able to edit or delete my comments
 
 ### As the site admin in need to:
 * Be able to manage all discussions and comments
-* Be able to update discussions, comments and categories
+* Be able to edit categories
 * Be able to add futher categories
 * Be able to delete discussions, comments, categories and users
 
@@ -144,7 +154,40 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 * When testing in different browers I wanted to make sure all feature and style look and functioned the same. This is important so that the user can have the same expeerience on any different brower. I tested that the page opens and works in browsers: Chrome, Edge, Firefox,and Bing. To test the different browsers I used my computer to test Chrome, Edge, Firefox, and bing
 
 ### Responsiveness
-* By using bootstrap I was able to make sure, the content was view able on all screen sizes with out stretching or overflow.
+* I tested that this project is responsive, keeps a consistent style, function as intended and looks good on all screen sizes. To make sure my site worked on different devices I loaded the page on an iphone XR, 13" laptop, 15" laptop and my PC which is displaying to a 24" monitor. To test my site on my screen sizes I didn't have I used dev tools. 
+
+### Testing user stories 
+
+### As a site user:
+* I want to be able to ready discussion and comments
+    * As a site user I can read discussions and comments
+* I want to be able to filter by a catagory
+    * As a site user I can filter by a catagory
+
+### As a registered site user:
+* I want to be able to create my own discussions
+    * As a registered user I can create my own discussions
+* I want to be able to comment on other discussions
+    * As a registered user I am able to comment on other discussions and my own
+* I want to be able to up or down vote a discussion
+    * As a registered user I can up or down vote a discussion
+* I want to be able to edit my discussions
+    * As a registered user I can edit my discussions
+* I want to be able to delete my discussions
+    * As a registered user I am able to delete
+* I want to be able to edit or delete my comments
+    * As a registered user I can delete and edit my comments
+
+### As the site admin in need to:
+* Be able to manage all discussions and comments
+    * As the site admin I am able to manage all discussions and comments in the admin panel
+* Be able to edit categories
+    * As the site admin I am able to update discussions, comments and categories
+* Be able to add futher categories
+    * As the site admin I am able to add more categories
+* Be able to delete discussions, comments, categories and users
+    * As the site admin I am able to delete discussions, comments, categories and users
+
 
 ### Validator Testing
 
@@ -158,12 +201,38 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
     * No errors were found when passing through the [JSHint validator](https://jshint.com/).
 
 * Python 
-    * No errors were found when passing through the [JSHint validator](http://pep8online.com/).
+    * No errors were found when passing through the [PEP8 validator](http://pep8online.com/).
 
 * Accessibility
-    * I used lighthouse to confirm the site accessibility 100% or very close to.
+    * I used lighthouse to confirm the site accessibility was as high as possible.
+
+### Defensive design 
+
+1. The signup form: 
+    * The user must input a user name
+    * The users password must  contain at least 8 characters and not be password is too common.
+**This is accomplished using allauth and its built in validation**
+        
+2. Adding a discussion:
+    * The user must be sign in
+    * The discussion must have a title that is unique.
+    * The discussion must contain Content.
+**The user is checked using djangos built in {% if statements %}**
+**This discussion requirements are set in the discussion class in the models.py file**
+
+3. Edit and delete a discussion or comment:
+    * The discussion or comment must have been created by the user in order for them to be able to edit or delete them.
+**The user is checked using djangos built in {% if statements %}**
 
 
+4. Deleting
+    * Nothing can be deleted in one click.
+**This is done using a model from bootstrap that is activated when a user tries to delete something**
+
+5. Up or down voting a discussion
+    * The user must be sign in
+    * The user can only up or down vote a discussion
+**This is done with True and Flase statments in the views.py file**
 
 ### Fixed Bugs 
 * When Adding an email to the sign up form it would cause a 500 error.
@@ -280,7 +349,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 Forking the repository allows us to have a copy of the original repository to view and make changes on our GitHub account with affecting to original work. Forking a repository can be done with the following steps.
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/will23JD/Ribbit)
 2. At the top right of the repository above settings, find and click the fork button. 
 3. You will now have a copy in your account.
 
