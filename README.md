@@ -2,8 +2,8 @@
 
 [View the live project here.](https://ribbit-2022.herokuapp.com/)
 
-Ribbit is a discussion website where users can post and discuss about what ever they want.
-People can find new information, inspiration and people, about anything they like.
+Ribbit is a discussion website where users can post and discuss about whatever they want.
+People can find new information, inspiration and people.
 
 ![View of website](documentation/screenshots/view.png)
 
@@ -11,15 +11,15 @@ People can find new information, inspiration and people, about anything they lik
 
 ## Project goals:
 
-* To make a fully functioning website where users can discuss about what ever they like.
-* Allow users full control over they discussion, with options to edit and delete.
+* To make a fully functioning website where users can discuss whatever they like.
+* Allow users full control over their discussion, with options to edit and delete.
 * Users can up and down vote discussions and create comments.
 
 ## User stories:
 
 ### As a site user:
-* I want to be able to ready discussion and comments
-* I want to be able to filter by a catagory
+* I want to be able to read discussion and comments
+* I want to be able to filter by a category
 
 ### As a registered site user:
 * I want to be able to create my own discussions
@@ -39,13 +39,13 @@ People can find new information, inspiration and people, about anything they lik
 * ## Design 
 
     * ### Imagery
-        * As images are able to be uploaded, by registered users, 
-        there is no theme, or stlye however if a user doesn't choose an images\
+        * Images are able to be uploaded by registered users.
+        There is no theme, or stlye however if a user doesn't choose an images\
         a basic frog is displayed to fill the space.
 
     * ### Colour Scheme
         * I used a mix of green throughout the page to stick with the theme
-        of a frog(Hence the name Ribbit)
+        of a frog(hence the name Ribbit)
 
         ![Color scheme](documentation/screenshots/colorPallet.png)
 
@@ -53,7 +53,7 @@ People can find new information, inspiration and people, about anything they lik
         * For my body and p elements, I used: [Montserrat](https://fonts.google.com/specimen/Montserrat)
         with a weight of 500. As this is a clean and easie to read font
 
-        * For the head emelents, I used: [Raleway](https://fonts.google.com/specimen/Raleway) with a 
+        * For the head elements, I used: [Raleway](https://fonts.google.com/specimen/Raleway) with a 
         weight of 400 as this again was a clean font.
 
 * ## Wireframes 
@@ -86,11 +86,11 @@ People can find new information, inspiration and people, about anything they lik
 ![Image of the nav bar](documentation/screenshots/Navbar.png)
 * On the Nav bar you are able to go back to the home page, view by category and if you are signed in you can:
     * Create a new discussion and logout.
-* If you aren't singed in you can login or sign up for an account.
+* If you aren't signed in you can login or sign up for an account.
 
 #### Footer
 ![Image of the footer](documentation/screenshots/footer.png)
-* The footer doesn't change based on if you are signed or not, and contains links to social platforms and copyright.
+* The footer doesn't change based on if you are signed or not, and it contains links to social platforms and copyright.
 
 
 ### Home page (index.html):
@@ -99,11 +99,10 @@ People can find new information, inspiration and people, about anything they lik
 ![Image of a discussion card](documentation/screenshots/card.png)
 * The card is general information about the discussion, which contains:
     * featured image
-    * title and exserpt
-    * auhtor and category
+    * title and exsert
+    * author and category
     * date of creation and up and down votes
-* The aim of the card is do give users an idea about the discussion before they click
-on it.
+* The aim of the card is to give users an idea about the discussion before they click on it.
 
 #### Pagination
 ![Image of a pagination](documentation/screenshots/next-pag.png)![Image of a pagination](documentation/screenshots/pev-pag.png)
@@ -113,9 +112,9 @@ on it.
 ![Image of a an open discussion](documentation/screenshots/open-discussion.png)
 * At the top of the page is the title of the discussion
 * Following this is is the feature image, if the user doesn't us a picture nothing will be displayed.
-* After this is the generall information about the post like: author, creation, up and down votes.
+* After this is the general information about the post like: author, creation, up and down votes.
 * Next is the body/main area for the discussion.
-* Last is the comment section, where you can read other peoples comments and comment your self.
+* Last is the comment section, where you can read other peoples comments and comment yourself.
 
 ### Your discussions
 * Having a separate page for all your discussion makes it easier to find, edit and delete 
@@ -133,8 +132,8 @@ may need to update a discussion to contain new/ correct information.
 
 ### Adding a discussion
 ![Image of adding a discussion](documentation/screenshots/add-discussion.png)
-* As a Login user If want to make a discussion I should have a clean simple way to do so.
-thats why adding a discussion is right on the nav bar and, open a simple form for users to create there discussion about what ever they want.
+* As a Login user, if want to make a discussion I should have a clean simple way to do so.
+That's why adding a discussion is right on the nav bar and opens a simple form for users to create their discussion about whatever they want.
 
 ### login/out and sign up
 ![Image of signing up](documentation/screenshots/sign-up.png)
@@ -145,13 +144,13 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 * More filters such as:
     * Number of votes
     * Discussions you have liked
-* A search box to look for a specific Disussion
+* A search box to look for a specific disussion
 * User profile page
 
 ## Testing
 
 ### Web browers
-* When testing in different browers I wanted to make sure all feature and style look and functioned the same. This is important so that the user can have the same expeerience on any different brower. I tested that the page opens and works in browsers: Chrome, Edge, Firefox,and Bing. To test the different browsers I used my computer to test Chrome, Edge, Firefox, and bing
+* When testing in different browers I wanted to make sure all feature and style look and functioned the same. This is important so that the user can have the same experience on any different brower. I tested that the page opens and works in browsers: Chrome, Edge, Firefox,and Bing. To test the different browsers I used my computer to test Chrome, Edge, Firefox, and bing
 
 ### Responsiveness
 * I tested that this project is responsive, keeps a consistent style, function as intended and looks good on all screen sizes. To make sure my site worked on different devices I loaded the page on an iphone XR, 13" laptop, 15" laptop and my PC which is displaying to a 24" monitor. To test my site on my screen sizes I didn't have I used dev tools. 
@@ -159,10 +158,10 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 ### Testing user stories 
 
 ### As a site user:
-* I want to be able to ready discussion and comments
+* I want to be able to read discussion and comments
     * As a site user I can read discussions and comments
 * I want to be able to filter by a catagory
-    * As a site user I can filter by a catagory
+    * As a site user I can filter by a category
 
 ### As a registered site user:
 * I want to be able to create my own discussions
@@ -174,7 +173,7 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 * I want to be able to edit my discussions
     * As a registered user I can edit my discussions
 * I want to be able to delete my discussions
-    * As a registered user I am able to delete
+    * As a registered user I am able to delete my discussions
 * I want to be able to edit or delete my comments
     * As a registered user I can delete and edit my comments
 
@@ -210,7 +209,7 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 
 1. The signup form: 
     * The user must input a user name
-    * The users password must  contain at least 8 characters and not be password is too common.
+    * The users password must  contain at least 8 characters and the password is not too common.
 **This is accomplished using allauth and its built in validation**
         
 2. Adding a discussion:
@@ -230,7 +229,7 @@ thats why adding a discussion is right on the nav bar and, open a simple form fo
 **This is done using a model from bootstrap that is activated when a user tries to delete something**
 
 5. Up or down voting a discussion
-    * The user must be sign in
+    * The user must be signed in
     * The user can only up or down vote a discussion
 **This is done with True and Flase statments in the views.py file**
 
