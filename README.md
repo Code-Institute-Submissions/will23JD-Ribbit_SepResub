@@ -7,6 +7,20 @@ People can find new information, inspiration and people.
 
 ![View of website](documentation/screenshots/view.png)
 
+## Index 
+
+* <a href="#ux">User experience (UX)</a>
+* <a href="#design">Design</a>
+* <a href="#wireframes">Wireframes</a>
+* <a href="#features">Features</a>
+* <a href="#testing">Testing</a>
+* <a href="#technologies">Technologies used</a>
+* <a href="#deployment">Deployment</a>
+* <a href="#credits">Credits</a>
+* <a href="#acknowledge">Acknowledge</a>
+
+<span id="ux"></span>
+
 ## User Experience (UX)
 
 ## Project goals:
@@ -35,28 +49,32 @@ People can find new information, inspiration and people.
 * Be able to add futher categories
 * Be able to delete discussions, comments, categories and users
 
+<span id="design"></span>
 
-* ## Design 
+## Design
 
-    * ### Imagery
-        * Images are able to be uploaded by registered users.
-        There is no theme, or stlye however if a user doesn't choose an images\
-        a basic frog is displayed to fill the space.
+### Imagery
+* Images are able to be uploaded by registered users.
+There is no theme, or stlye however if a user doesn't choose an images\
+a basic frog is displayed to fill the space.
 
-    * ### Colour Scheme
-        * I used a mix of green throughout the page to stick with the theme
-        of a frog(hence the name Ribbit)
+### Colour Scheme
+* I used a mix of green throughout the page to stick with the theme
+of a frog(hence the name Ribbit)
 
-        ![Color scheme](documentation/screenshots/colorPallet.png)
+![Color scheme](documentation/screenshots/colorPallet.png)
 
-    * ### Typography 
-        * For my body and p elements, I used: [Montserrat](https://fonts.google.com/specimen/Montserrat)
-        with a weight of 500. As this is a clean and easie to read font
+### Typography 
+* For my body and p elements, I used: [Montserrat](https://fonts.google.com/specimen/Montserrat)
+with a weight of 500. As this is a clean and easie to read font
 
-        * For the head elements, I used: [Raleway](https://fonts.google.com/specimen/Raleway) with a 
-        weight of 400 as this again was a clean font.
+* For the head elements, I used: [Raleway](https://fonts.google.com/specimen/Raleway) with a 
+weight of 400 as this again was a clean font.
 
-* ## Wireframes 
+<span id="wireframes"></span>
+
+## Wireframes 
+
 * Home page
 
     ![Color scheme](documentation/screenshots/home-page.png)
@@ -73,10 +91,12 @@ People can find new information, inspiration and people.
 
     ![Color scheme](documentation/screenshots/signin.png)
 
-### Flow chart
+## Flow chart
 
 ![Flow chart](documentation/screenshots/Flow-chart.png)
 * How the user can use the site if the are signed it or not
+
+<span id="features"></span>
 
 ## Features
 
@@ -146,6 +166,8 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
     * Discussions you have liked
 * A search box to look for a specific disussion
 * User profile page
+
+<span id="testing"></span>
 
 ## Testing
 
@@ -244,6 +266,8 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
 ### Unfixed Bugs
 * None
 
+<span id="technologies"></span>
+
 ## Technologies Used
 
 ### Languages Used
@@ -271,7 +295,7 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
  
 * [Font Awesome](https://fontawesome.com/)
 
-
+<span id="deployment"></span>
 
 ## Deployment
 
@@ -352,6 +376,8 @@ Forking the repository allows us to have a copy of the original repository to vi
 2. At the top right of the repository above settings, find and click the fork button. 
 3. You will now have a copy in your account.
 
+<span id="credits"></span>
+
 ## Credits
 
 ### Code 
@@ -362,6 +388,8 @@ Forking the repository allows us to have a copy of the original repository to vi
     heroku, cloudinary, basic stlyes and allauth.
 * [Stack overflow](https://stackoverflow.com/)
     * Help with various bugs
+
+<span id="acknowledge"></span>
 
 ### Acknowledgements
 
