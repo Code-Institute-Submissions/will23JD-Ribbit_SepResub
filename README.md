@@ -285,7 +285,17 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
 
 * [Cloudinary](https://cloudinary.com/home-3722)
 
+* [PostgreSQL](https://www.postgresql.org/)
+
 * [Summernote](https://summernote.org/)
+
+* [Heroku](https://www.heroku.com/home)
+
+* [Gitpod](https://www.gitpod.io/)
+
+* [Git](https://git-scm.com/)
+
+* [GitHub](https://github.com/)
 
 * [Balsamiq](https://balsamiq.com/wireframes/)
 
@@ -388,6 +398,8 @@ Forking the repository allows us to have a copy of the original repository to vi
     heroku, cloudinary, basic stlyes and allauth.
 * [Stack overflow](https://stackoverflow.com/)
     * Help with various bugs
+* [Pexel](https://www.pexels.com/)
+    * source of all stock images.
 
 <span id="acknowledge"></span>
 
