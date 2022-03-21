@@ -136,6 +136,14 @@ weight of 400 as this again was a clean font.
 * Next is the body/main area for the discussion.
 * Last is the comment section, where you can read other peoples comments and comment yourself.
 
+### View by category
+![Image of a an open discussion](documentation/screenshots/cats.png)
+* The category page allows user's to view post by there category.
+* This can make it easier for user's to find discussions they are interested about.
+* The categories are displayed in the same way as the home page in order to keep a consistant style
+and make it easy for the user to navigate through.
+
+
 ### Your discussions
 * Having a separate page for all your discussion makes it easier to find, edit and delete 
 them, this is important because a user doesn't want to have to scroll though other 
