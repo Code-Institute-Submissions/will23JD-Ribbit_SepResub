@@ -4,7 +4,7 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.DiscussionList.as_view(), name='home'),
-    path('your_discussions', views.YourDiscussions.as_view(), name='yourDis'),
+    path('your_discussions/', views.YourDiscussions.as_view(), name='yourDis'),
     path('add_discussion/', views.AddDiscussion.as_view(), name='addDis'),
     path('discussion/<int:pk>/', views.DiscussionOpen.as_view(), name='disOpen'),
     path('like/<int:pk>/', views.DiscussionLike, name='disLike'),
