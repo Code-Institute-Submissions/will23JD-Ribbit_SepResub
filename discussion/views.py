@@ -3,6 +3,8 @@ from django.http import HttpResponseRedirect
 from django.views import generic
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy
+from django.contrib import messages
+
 from .models import Discussion, Categorys, Comment
 from .forms import DiscussionForm, CommentForm
 
@@ -94,6 +96,10 @@ class AddDiscussion(generic.CreateView):
     model = Discussion
     form_class = DiscussionForm
     template_name = 'add_discussion.html'
+
+    def form_valid(self, form):
+        messages.success(self.request, 'New Discussion Created!')
+        return super().form_valid(form)
     # fields = ('title', 'slug', 'featured_image', 'excerpt', 'content')
 
 
@@ -103,6 +109,7 @@ class Comments(generic.CreateView):
     template_name = 'comments.html'
 
     def form_valid(self, form):
+        messages.success(self.request, 'Comment Created Successfully')
         form.instance.Discussion_id = self.kwargs['pk']
         return super().form_valid(form)
 
@@ -118,12 +125,14 @@ class Edit(generic.UpdateView):
 
     def get_success_url(self):
 
+        messages.success(self.request, 'Discussion Edited Successfully')
         return reverse_lazy('disOpen', kwargs={'pk': self.kwargs['pk']})
 
 
 def Delete(request, pk):
     discussion = Discussion.objects.get(pk=pk)
     discussion.delete()
+    messages.warning(request, 'Discussion deleted.')
     return redirect('home')
 
 
@@ -134,6 +143,7 @@ class EditComment(generic.UpdateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(self.request, 'Comment Edited Successfully')
         self.success_url = self.request.POST.get('previous_page')
         return super().form_valid(form)
 
@@ -141,6 +151,7 @@ class EditComment(generic.UpdateView):
 def DeleteComment(request, pk):
     comment = Comment.objects.get(pk=pk)
     comment.delete()
+    messages.warning(request, 'Comment deleted.')
     return redirect('home')
 
 
