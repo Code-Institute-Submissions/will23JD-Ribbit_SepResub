@@ -13,10 +13,10 @@
                     <a class="link" href="{% url 'catsview' cat %}">
                         <div class="card mb-3">
                             {% if "placeholder" in cat.featured_image.url %}
-                            <img aria-label="Discussion standard image(frog)" class="card-img-top img"
+                            <img alt="standard image(frog)" class="card-img-top img"
                                 src="https://res.cloudinary.com/will23jd/image/upload/v1647709480/pexels-couleur-2631482_qftpr0.jpg">
                             {% else %}
-                            <img aria-label="Category featured image" class="card-img-top img"
+                            <img alt="Category featured image" class="card-img-top img"
                                 src="{{ cat.featured_image.url }}">
                             {% endif %}
                             <div class="text-center">

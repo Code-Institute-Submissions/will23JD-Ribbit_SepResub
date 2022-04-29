@@ -14,10 +14,10 @@
                     <div class="card mb-4">
                         <div class="image-container">
                             {% if "placeholder" in discussion.featured_image.url %}
-                            <img class="card-img-top img" aria-label="placeholder standard image(frog)"
+                            <img class="card-img-top img" alt="placeholder standard image(frog)"
                                 src="https://res.cloudinary.com/will23jd/image/upload/v1647709480/pexels-couleur-2631482_qftpr0.jpg">
                             {% else %}
-                            <img class="card-img-top img" aria-label="Discussion featured image"
+                            <img class="card-img-top img" alt="Discussion featured image"
                                 src="{{ discussion.featured_image.url }}">
                             {% endif %}
                         </div>
