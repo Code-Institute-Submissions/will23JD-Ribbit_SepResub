@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
+
 # Discussion model
 class Discussion(models.Model):
     title = models.CharField(max_length=100, unique=True)
@@ -15,7 +16,6 @@ class Discussion(models.Model):
     likes = models.ManyToManyField(User, related_name='discussion_likes', blank=True)
     down_vote = models.ManyToManyField(User, related_name='discussion_downvote', blank=True)
     category = models.CharField(max_length=100, default='coding')
-
 
     def __str__(self):
         return self.title

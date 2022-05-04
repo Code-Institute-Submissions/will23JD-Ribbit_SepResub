@@ -59,9 +59,7 @@ def DiscussionCats(request, cats):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'view_by_cats.html',
-            {'cats': cats, 'discussion_cat': discussion_cat,
-                'page_obj': page_obj})
+    return render(request, 'view_by_cats.html', {'cats': cats, 'discussion_cat': discussion_cat, 'page_obj': page_obj})
 
 
 def DiscussionLike(request, pk):

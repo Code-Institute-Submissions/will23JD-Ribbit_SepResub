@@ -231,6 +231,7 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
 
 * Python 
     * No errors were found when passing through the [PEP8 validator](http://pep8online.com/).
+    * (Only lines to long which as been a long stanting issue with django and pep8)
 
 * Accessibility
     * I used lighthouse to confirm the site accessibility was as high as possible.
