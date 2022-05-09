@@ -96,6 +96,10 @@ weight of 400 as this again was a clean font.
 ![Flow chart](documentation/screenshots/Flow-chart.png)
 * How the user can use the site if the are signed it or not
 
+## Burndown Chart
+![Burndown chart](documentation/screenshots/burndown_chart.png)
+* This agile tool allows me to see if im on track to complete the current interation on time by comparing the current complete story points vs the planned points. 
+
 <span id="features"></span>
 
 ## Features
