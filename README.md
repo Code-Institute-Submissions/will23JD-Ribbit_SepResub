@@ -189,33 +189,34 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
 
 ### As a site user:
 * I want to be able to read discussion and comments
-    * As a site user I can read discussions and comments
+    * As a site user I can read discussions and comments by: clicking on any discussion title or excerpt I wish to open.
 * I want to be able to filter by a catagory
-    * As a site user I can filter by a category
+    * As a site user I can filter by a category by: clicking on the categories table at the top of the page and selecting the category I wish to filter by.
 
 ### As a registered site user:
 * I want to be able to create my own discussions
-    * As a registered user I can create my own discussions
+    * As a registered user I can create my own discussions by: clicking on the create a discussion on the nav bar which brings out a form to create my discussion.
 * I want to be able to comment on other discussions
-    * As a registered user I am able to comment on other discussions and my own
+    * As a registered user I am able to comment on other discussions and my own by: clicking the speech bubble icon at the end of the discussion allowing me to write a comment.
 * I want to be able to up or down vote a discussion
-    * As a registered user I can up or down vote a discussion
+    * As a registered user I can up or down vote a discussion by: clicking on the up or down arrow before the discussion body.
 * I want to be able to edit my discussions
-    * As a registered user I can edit my discussions
+    * As a registered user I can edit my discussions by: clicking the 3 dots at the bottom right of an unopend discussion or the top left of an opened one and pressing edit.
 * I want to be able to delete my discussions
-    * As a registered user I am able to delete my discussions
+    * As a registered user I am able to delete my discussions by: clicking the 3 dots at the bottom right of an unopend discussion or the top left of an opened one and clicking delete and the confirming the pop up modal.
 * I want to be able to edit or delete my comments
-    * As a registered user I can delete and edit my comments
+    * As a registered user I can delete and edit my comments by: clicking the 3 dots at the end of the comment and pressing edit or delete.
 
 ### As the site admin in need to:
 * Be able to manage all discussions and comments
-    * As the site admin I am able to manage all discussions and comments in the admin panel
+    * As the site admin I am able to manage all discussions and comments in the admin panel by: login on to the admin pannle and clicking on discussion > discussions or comments > then clicking what you want to manage.
 * Be able to edit categories
-    * As the site admin I am able to update discussions, comments and categories
+    * As the site admin I am able to update discussions, comments and categories by: login on to the admin pannle and clicking on discussion > categoryss(wrong spelling on the model) > then on the category you wish to edit.
 * Be able to add futher categories
-    * As the site admin I am able to add more categories
+    * As the site admin I am able to add more categories by: login on to the admin pannle and clicking on discussion > categoryss and clicking add category in the top right.
 * Be able to delete discussions, comments, categories and users
-    * As the site admin I am able to delete discussions, comments, categories and users
+    * As the site admin I am able to delete discussions, comments, categories and users by: login on to the admin pannle and clicking discussion > then the area in which you want to delete something(discussions) > then on the discussion you want to delete
+    then clicking delete at the bottom of the page and confirming. To delete users click on users under authentication and authorization then clickin on the user you wish to delete and clicking delete at the bottom of the page and confirming.
 
 
 ### Validator Testing
