@@ -39,7 +39,8 @@ class DiscussionOpen(generic.DetailView):
         downvote_connected = get_object_or_404(
             Discussion, id=self.kwargs['pk'])
         downVoted = False
-        if downvote_connected.down_vote.filter(id=self.request.user.id).exists():
+        if downvote_connected.down_vote.filter(id=self.request.user.id).exists(
+        ):
             downVoted = True
         data['downVoted'] = downVoted
 
@@ -59,7 +60,12 @@ def DiscussionCats(request, cats):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'view_by_cats.html', {'cats': cats, 'discussion_cat': discussion_cat, 'page_obj': page_obj})
+    return render(
+        request, 'view_by_cats.html', {
+            'cats': cats, 'discussion_cat': discussion_cat,
+            'page_obj': page_obj
+            }
+        )
 
 
 def DiscussionLike(request, pk):
