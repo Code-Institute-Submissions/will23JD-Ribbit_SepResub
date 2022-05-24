@@ -12,6 +12,7 @@ People can find new information, inspiration and people.
 * <a href="#ux">User experience (UX)</a>
 * <a href="#design">Design</a>
 * <a href="#wireframes">Wireframes</a>
+* <a href="#agile">Agile</a>
 * <a href="#features">Features</a>
 * <a href="#testing">Testing</a>
 * <a href="#technologies">Technologies used</a>
@@ -95,6 +96,19 @@ weight of 400 as this again was a clean font.
 
 ![Flow chart](documentation/screenshots/Flow-chart.png)
 * How the user can use the site if the are signed it or not
+
+<span id="agile"></span>
+
+## User stories
+
+### Issues
+![Issues tab]()
+Issues this aglie tool allows for user stories to be easily added to the project and creates a clear idea of what needs to be done to implement the feature.
+
+### Milestone
+![Milestone tab]()
+After creating issues they can be sorted into milestones, this allows to see the current porgress on the issues and close them with comments. This is useful
+as it allows you to keep an on track with the projects release date.
 
 ## Burndown Chart
 ![Burndown chart](documentation/screenshots/burndown_chart.png)
