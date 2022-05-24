@@ -102,11 +102,11 @@ weight of 400 as this again was a clean font.
 ## User stories
 
 ### Issues
-![Issues tab]()
+![Issues tab](documentation/screenshots/issues-tab.png)
 Issues this aglie tool allows for user stories to be easily added to the project and creates a clear idea of what needs to be done to implement the feature.
 
 ### Milestone
-![Milestone tab]()
+![Milestone tab](documentation/screenshots/milestone.png)
 After creating issues they can be sorted into milestones, this allows to see the current porgress on the issues and close them with comments. This is useful
 as it allows you to keep an on track with the projects release date.
 
