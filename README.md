@@ -337,6 +337,21 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
 
 ## Deployment
 
+**Important**
+* Due to security issue Heroku had disabled deployments from GitHub so in order to deploy the project you must do so within Gitpod.
+1. Open the terminal.
+2. Log in to Heroku and enter your details.
+    * Enter the following command in the terminal: heroku login -i
+3. Get your app name from Heroku.
+    * Enter the following command in the terminal: heroku apps
+3. Set the Heroku remote. (Replace <app_name> with your actual app name and remove the <> characters)
+    * Enter the following command in the terminal: heroku git:remote -a <app_name>
+4. Add and commit any changes to your code, if applicable.
+    * Enter the following command in the terminal: git add . && git commit -m "Deploy to Heroku via CLI"
+5. Push to both GitHub and Heroku
+    * Enter the following command in the terminal: git push origin main
+    * Enter the following command in the terminal: git push heroku main
+
 ### Django and suporting libaries
 1. In a new workspace in the terminal type: pip3 install django gunicorn
 2. Libaries need for PostgreSQL: pip3 install dj_database_url psycopg2
