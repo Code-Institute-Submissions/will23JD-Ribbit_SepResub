@@ -105,9 +105,13 @@
       <a href="http://whatsapp.com" target="_blank" rel="noopener"
         aria-label="Visit our WhatsApp page (opens in a new tab)" class="off-white"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p class="m-0 text-center s-text off-white">Copyright &copy; <script>
-        document.write(new Date().getFullYear())
-      </script> Will23JD All Rights Reserved</p>
+    <p class="m-0 text-center s-text off-white">
+      &copy;
+      <span id="copyright">
+          <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+      </span>
+      Will23JD All Rights Reserved
+    </p>
   </footer>
   <script>
     setTimeout(function () {

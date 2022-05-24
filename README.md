@@ -219,19 +219,19 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
 * I want to be able to up or down vote a discussion
     * As a registered user I can up or down vote a discussion by: clicking on the up or down arrow before the discussion body.
 * I want to be able to edit my discussions
-    * As a registered user I can edit my discussions by: clicking the 3 dots at the bottom right of an unopend discussion or the top left of an opened one and pressing edit.
+    * As a registered user I can edit my discussions by: clicking the 3 dots at the bottom right of an unopened discussion or the top left of an opened one and pressing edit.
 * I want to be able to delete my discussions
-    * As a registered user I am able to delete my discussions by: clicking the 3 dots at the bottom right of an unopend discussion or the top left of an opened one and clicking delete and the confirming the pop up modal.
+    * As a registered user I am able to delete my discussions by: clicking the 3 dots at the bottom right of an unopened discussion or the top left of an opened one and clicking delete and the confirming the pop up modal.
 * I want to be able to edit or delete my comments
     * As a registered user I can delete and edit my comments by: clicking the 3 dots at the end of the comment and pressing edit or delete.
 
 ### As the site admin in need to:
 * Be able to manage all discussions and comments
-    * As the site admin I am able to manage all discussions and comments in the admin panel by: login on to the admin pannle and clicking on discussion > discussions or comments > then clicking what you want to manage.
+    * As the site admin I am able to manage all discussions and comments in the admin panel by: login on to the admin panel and clicking on discussion > discussions or comments > then clicking what you want to manage.
 * Be able to edit categories
-    * As the site admin I am able to update discussions, comments and categories by: login on to the admin pannle and clicking on discussion > categoryss(wrong spelling on the model) > then on the category you wish to edit.
+    * As the site admin I am able to update discussions, comments and categories by: login on to the admin panel and clicking on discussion > categoryss(wrong spelling on the model) > then on the category you wish to edit.
 * Be able to add futher categories
-    * As the site admin I am able to add more categories by: login on to the admin pannle and clicking on discussion > categoryss and clicking add category in the top right.
+    * As the site admin I am able to add more categories by: login on to the admin panel and clicking on discussion > categoryss and clicking add category in the top right.
 * Be able to delete discussions, comments, categories and users
     * As the site admin I am able to delete discussions, comments, categories and users by: login on to the admin pannle and clicking discussion > then the area in which you want to delete something(discussions) > then on the discussion you want to delete
     then clicking delete at the bottom of the page and confirming. To delete users click on users under authentication and authorization then clickin on the user you wish to delete and clicking delete at the bottom of the page and confirming.
@@ -255,7 +255,9 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
 * Accessibility
     * I used lighthouse to confirm the site accessibility was as high as possible.
 
-### Defensive design 
+### Defensive design
+
+#### Python
 
 1. The signup form: 
     * The user must input a user name
@@ -282,6 +284,20 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
     * The user must be signed in
     * The user can only up or down vote a discussion
 **This is done with True and Flase statments in the views.py file**
+
+#### JavaScript
+As there is not much JavaScript code in this project manual test have been used to assess functionality.
+
+1. Copyright script in the footer:
+    * The footer displays the right date.
+
+2. Message pop up script:
+    * This after performing any CRUD opperation a message displays at the top of the screen and removes itself after 4 seconds.
+
+3. Let author = {{use.id}} script on add, edit discussions and add comments. 
+    * This allows allows the users name to be passed to the form in order to keep the user from editing the author. I've
+    tested this function work on all forms.
+
 
 ### Fixed Bugs 
 * When Adding an email to the sign up form it would cause a 500 error.
