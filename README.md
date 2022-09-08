@@ -236,6 +236,37 @@ That's why adding a discussion is right on the nav bar and opens a simple form f
     * As the site admin I am able to delete discussions, comments, categories and users by: login on to the admin pannle and clicking discussion > then the area in which you want to delete something(discussions) > then on the discussion you want to delete
     then clicking delete at the bottom of the page and confirming. To delete users click on users under authentication and authorization then clickin on the user you wish to delete and clicking delete at the bottom of the page and confirming.
 
+### Manual Testing
+#### Nav and Home page
+
+* Test that the logo links back to the home page - **PASS**
+* Test that the Home button links back to the home page - **PASS**
+* Test that the Category button links to the category page - **PASS**
+* Test that the clicking on a discussion links to the discussion detail page - **PASS**
+* Test that the login button links to the login page - **PASS**
+##### If singed in
+* Test that the logout button links to the logout page - **PASS**
+* Test that the Add discussion button links to the Add discussion page - **PASS**
+* Test that the My discussion button links to the My discussion page - **PASS**
+
+#### Discussion Detail Page
+
+* Test that all information is present - **PASS**
+##### If singed in
+* Test that the user can leave a comment - **PASS**
+* Test that the user can up or down vote a discussion - **PASS**
+* Test that the user can edit or delete a comment - **PASS**
+
+#### My Discussions Page
+
+* Test that the user can see all their discussions - **PASS**
+
+#### Add/Edit and Delete a Discussion page
+
+* Test that a user can only add a discussion when all the required information is present - **PASS**
+* Test that a user can only edit a discussion that they created - **PASS**
+* Test that a user can only delete a discussion that they created - **PASS**
+
 
 ### Validator Testing
 

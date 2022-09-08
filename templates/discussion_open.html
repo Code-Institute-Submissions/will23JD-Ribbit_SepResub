@@ -6,7 +6,7 @@
         <div class="hstack gap-3">
             <h2>{{ discussion.title }}</h2>
             {% if user.id == discussion.author.id %}
-            <div class="dropdown ms-auto">
+            <div class="dropdown">
                 <a class="link" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     <i class="fas fa-ellipsis-h fs-1"></i>
@@ -47,8 +47,8 @@
             {% if "placeholder" in discussion.featured_image.url %}
 
             {% else %}
-            <img class="open_img" aria-label="Discussion featured image" src=" {{ discussion.featured_image.url }}"
-                width="100%">
+            <img class="open_img" alt="Discussion featured image" src=" {{ discussion.featured_image.url }}"
+            style="width: 100%;">
             {% endif %}
         </div>
         <div class="col-12">
